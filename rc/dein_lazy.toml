@@ -1,0 +1,9 @@
+# vim-alignta
+[[plugins]]
+repo   = 'h1mesuke/vim-alignta'
+on_cmd = ['Align', 'AlignTsp', 'Alignta']
+
+# vim-colors-solarized
+[[plugins]]
+repo   = 'altercation/vim-colors-solarized'
+on_cmd = ['colorscheme']

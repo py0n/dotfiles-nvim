@@ -1,0 +1,7 @@
+# dein.vim
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# vim-colors-solarized
+#[[plugins]]
+#repo = 'altercation/vim-colors-solarized'
