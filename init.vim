@@ -23,6 +23,10 @@ endfunction " }}}
 " }}}
 
 " Initialization {{{
+augroup MyAugroup
+    autocmd!
+augroup END
+
 call s:source_rc('dein.vim')
 " }}}
 

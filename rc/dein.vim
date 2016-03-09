@@ -32,6 +32,12 @@ if dein#tap('vim-colors-solarized')
     set background=dark
 endif
 
+" vim-fugitive
+if dein#tap('vim-fugitive')
+    execute 'autocmd MyAugroup User' 'dein#post_source#'.g:dein#name
+     \ 'doautoall fugitive BufNewFile'
+endif
+
 if dein#check_install()
     call dein#install()
 endif

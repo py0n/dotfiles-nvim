@@ -2,3 +2,9 @@
 [[plugins]]
 repo   = 'h1mesuke/vim-alignta'
 on_cmd = ['Align', 'AlignTsp', 'Alignta']
+
+# vim-fugitive
+[[plugins]]
+repo    = 'tpope/vim-fugitive'
+on_cmd  = ['Gblame', 'Gdiff', 'Gstatus', 'Gwrite', 'Gvdiff']
+on_func = ['fugitive#head']
