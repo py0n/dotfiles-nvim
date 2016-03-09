@@ -11,13 +11,15 @@ call dein#begin($MYDEINCACHEDIR)
 let s:dein_toml      = $MYVIMRCDIR . '/dein.toml'
 let s:dein_lazy_toml = $MYVIMRCDIR . '/dein_lazy.toml'
 
-if dein#load_cache([expand('<sfile>'), s:dein_toml, s:dein_lazy_toml])
+if dein#load_cache([$MYVIMRC, s:dein_toml, s:dein_lazy_toml])
     call dein#load_toml(s:dein_toml,      {'lazy': 0})
     call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
     call dein#save_cache()
 endif
 
 call dein#end()
+
+filetype plugin indent on
 
 " vim-colors-solarized
 if dein#tap('vim-colors-solarized')
