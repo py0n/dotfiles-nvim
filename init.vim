@@ -62,7 +62,7 @@ set hidden
 set ignorecase   " case insesitiveな補完
 set hlsearch
 set incsearch
-set laststatus=2
+set laststatus=2 " for lightline.vim
 set lazyredraw
 set modeline
 set modelines=10
