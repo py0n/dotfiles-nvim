@@ -14,3 +14,7 @@ if   = '!has("win32unix")'
 # vim-surround
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+# wildfire.vim
+[[plugins]]
+repo = 'gcmt/wildfire.vim'

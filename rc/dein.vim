@@ -171,6 +171,18 @@ if dein#tap('vim-rooter')
      \  'call s:vim_rooter_on_source()'
 endif " }}}
 
+" wildfire.vim {{{
+if dein#tap('wildfire.vim')
+    function! s:wildfire_vim_on_source() abort
+        " http://hail2u.net/blog/software/vim-wildfire.html
+        " http://m.designbits.jp/14030411/
+        " https://github.com/gcmt/wildfire.vim
+        let g:wildfire_objects = ["i'", 'i"', 'i)', 'i]', 'i}', 'ip', 'it', 'i>']
+    endfunction
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'call s:wildfire_vim_on_source()'
+endif " }}}
+
 " Check dein {{{
 if dein#check_install()
     call dein#install()
