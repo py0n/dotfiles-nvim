@@ -1,3 +1,4 @@
+" Initialize dein.vim {{{
 let s:dein_dir = $MYDEINCACHEDIR . '/repos/github.com/Shougo/dein.vim'
 
 if !isdirectory(s:dein_dir)
@@ -20,8 +21,9 @@ endif
 call dein#end()
 
 filetype plugin indent on
+" }}}
 
-" vim-colors-solarized
+" vim-colors-solarized {{{
 if dein#tap('vim-colors-solarized')
     " http://ethanschoonover.com/solarized
     let g:solarized_contrast   = "high"
@@ -30,17 +32,33 @@ if dein#tap('vim-colors-solarized')
     let g:solarized_termtrans  = 1
     let g:solarized_visibility = "high"
     set background=dark
-endif
+endif " }}}
 
-" vim-fugitive
+" vim-fugitive {{{
 if dein#tap('vim-fugitive')
     execute 'autocmd MyAugroup User' 'dein#post_source#'.g:dein#name
      \ 'doautoall fugitive BufNewFile'
-endif
+endif " }}}
 
+" vim-gitgutter {{{
+if dein#tap('vim-gitgutter')
+    " https://github.com/airblade/vim-gitgutter
+    " デフォルトでは以下のキーマップが設定されている。
+    " nmap ]c <Plug>GitGutterNextHunk
+    " nmap [c <Plug>GitGutterPrevHunk
+    function! s:vim_gitgutter_on_source() abort
+        let g:gitgutter_sign_added    = '✚'
+        let g:gitgutter_sign_modified = '➜'
+        let g:gitgutter_sign_removed  = '✘'
+    endfunction
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'call s:vim_gitgutter_on_source()'
+endif " }}}
+
+" Check dein {{{
 if dein#check_install()
     call dein#install()
-endif
+endif " }}}
 
 " vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
 

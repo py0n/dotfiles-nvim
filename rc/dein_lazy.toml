@@ -8,3 +8,8 @@ on_cmd = ['Align', 'AlignTsp', 'Alignta']
 repo    = 'tpope/vim-fugitive'
 on_cmd  = ['Gblame', 'Gdiff', 'Gstatus', 'Gwrite', 'Gvdiff']
 on_func = ['fugitive#head']
+
+# vim-gitgutter
+[[plugins]]
+repo    = 'airblade/vim-gitgutter'
+on_func = ['GitGutterGetHunkSummary']

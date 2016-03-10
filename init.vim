@@ -2,6 +2,10 @@ if &compatible
     set nocompatible
 endif
 
+augroup MyAugroup
+    autocmd!
+augroup END
+
 " Environments {{{
 let $MYVIMRUNTIME = fnamemodify($MYVIMRC, ':p:h')
 let $MYVIMRCDIR   = $MYVIMRUNTIME . '/rc'
@@ -33,20 +37,6 @@ call s:source_rc('dein.vim')
 " Colorscheme {{{
 syntax enable
 colorscheme solarized
-" }}}
-
-" Colorscheme {{{
-syntax enable
-if dein#tap('vim-colors-solarized')
-    " http://ethanschoonover.com/solarized
-    let g:solarized_contrast   = "high"
-    let g:solarized_hitrail    = 1
-    let g:solarized_termcolors = 256
-    let g:solarized_termtrans  = 1
-    let g:solarized_visibility = "high"
-    set background=dark
-    colorscheme solarized
-endif
 " }}}
 
 " Keymaps {{{
