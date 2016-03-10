@@ -157,6 +157,24 @@ if dein#tap('vim-localrc')
      \  'call s:vim_localrc_on_source()'
 endif " }}}
 
+" vim-precious {{{
+if dein#tap('vim-precious')
+    " https://github.com/osyo-manga/vim-precious
+    " カーソルの位置によって `filetype` を切り替える
+    function! s:vim_precious_on_source() abort
+        let g:context_filetype#filetypes = {
+         \ 'html': [
+         \     {
+         \         'start'    : '<script\%( [^>]*\)\? type="text/javascript"\%( [^>]*\)\?>',
+         \         'end'      : '</script>',
+         \         'filetype' : 'javascript',
+         \     }
+         \ ]}
+    endfunction
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'call s:vim_precious_on_source()'
+endif " }}}
+
 " vim-rooter {{{
 if dein#tap('vim-rooter')
     " https://github.com/airblade/vim-rooter

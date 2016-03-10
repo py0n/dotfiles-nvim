@@ -4,6 +4,10 @@ repo      = 'koron/codic-vim'
 on_cmd    = ['Codic']
 on_source = ['unite-codic.vim']
 
+# context_filetype.vim
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
 # linediff.vim
 [[plugins]]
 repo   = 'AndrewRadev/linediff.vim'
@@ -55,6 +59,12 @@ on_func = ['fugitive#head']
 [[plugins]]
 repo    = 'airblade/vim-gitgutter'
 on_func = ['GitGutterGetHunkSummary']
+
+# vim-precious
+[[plugins]]
+repo    = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+on_ft   = ['html']
 
 # vim-rooter
 [[plugins]]
