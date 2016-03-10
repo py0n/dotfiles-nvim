@@ -37,10 +37,12 @@ colorscheme solarized
 " }}}
 
 " Settings {{{
-" case insesitiveな補完
-set ignorecase
-" 大文字を含むときはcase sentitiveな補完
-set smartcase
+set expandtab    " タブを空白に展開
+set ignorecase   " case insesitiveな補完
+set shiftwidth=4 " インデント幅4
+set smartcase    " 大文字を含むときはcase sentitiveな補完
+set softtabstop=4
+set tabstop=4    " タブ幅4
 " }}}
 
 " Keymaps {{{
