@@ -60,7 +60,7 @@ if dein#tap('unite.vim')
 
     " バッファ及び最近使用したファイル一覧 (要 neomru)
     nnoremap <C-P> :<C-u>Unite -buffer-name=files buffer file_mru<CR>
-    nnoremap <C-N> :<C-u>Unite -buffer-name=files file<CR>
+    nnoremap <C-N> :<C-u>Unite -buffer-name=files file file/new<CR>
 
     " unite.vim呼び出し
     " http://deris.hatenablog.jp/entry/2013/05/02/192415
