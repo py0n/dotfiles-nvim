@@ -64,8 +64,7 @@ if dein#tap('unite.vim')
     " `<C-c>` で閉じる
     autocmd MyAugroup FileType unite inoremap <silent> <buffer> <C-c> <ESC>:q<CR>
     autocmd MyAugroup FileType unite nnoremap <silent> <buffer> <C-c> :q<CR>
-endif
-" }}}
+endif " }}}
 
 " vim-colors-solarized {{{
 if dein#tap('vim-colors-solarized')
@@ -78,10 +77,58 @@ if dein#tap('vim-colors-solarized')
     set background=dark
 endif " }}}
 
+" vim-easymotion {{{
+if dein#tap('vim-easymotion')
+    " https://github.com/easymotion/vim-easymotion
+    " http://haya14busa.com/vim-lazymotion-on-speed/
+    " http://haya14busa.com/mastering-vim-easymotion/
+    " http://haya14busa.com/vim-easymotion-ver-3-dot-0-overwin-motions/
+    function! s:vim_easymotion_on_source() abort
+        " Disable default mappings
+        " If you are true vimmer, you should explicitly map keys by yourself.
+        " Do not rely on default bidings.
+        let g:EasyMotion_do_mapping = 0
+
+        " n-character serach motion
+        " Extend search motions with vital-over command line interface
+        " Incremental highlight of all the matches
+        " Now, you don't need to repetitively press `n` or `N` with
+        " EasyMotion feature
+        " `<Tab>` & `<S-Tab>` to scroll up/down a page with next match
+        " :h easymotion-command-line
+        nmap / <Plug>(easymotion-sn)
+        xmap / <Plug>(easymotion-sn)
+        omap / <Plug>(easymotion-tn)
+
+        " hjkl motions
+        "map  <Space>j <Plug>(easymotion-j)
+        "map  <Space>k <Plug>(easymotion-k)
+        map  <Space>h <Plug>(easymotion-linebackward)
+        map  <Space>j <Plug>(easymotion-bd-jk)
+        map  <Space>k <Plug>(easymotion-bd-jk)
+        map  <Space>l <Plug>(easymotion-lineforward)
+        nmap <Space>j <Plug>(easymotion-overwin-line)
+        nmap <Space>k <Plug>(easymotion-overwin-line)
+
+        " Move to word
+        map  <Space>w <Plug>(easymotion-bd-w)
+        nmap <Space>w <Plug>(easymotion-overwin-w)
+
+        " keep cursor colum when JK motion
+        let g:EasyMotion_startofline = 0
+
+        " Show target key with upper case to improve readability
+        let g:EasyMotion_keys      = ';HKLYUIOPNM,QWERTASDGZXCVBJF'
+        let g:EasyMotion_use_upper = 1
+    endfunction
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'call s:vim_easymotion_on_source()'
+endif " }}}
+
 " vim-fugitive {{{
 if dein#tap('vim-fugitive')
     execute 'autocmd MyAugroup User' 'dein#post_source#'.g:dein#name
-     \ 'doautoall fugitive BufNewFile'
+     \  'doautoall fugitive BufNewFile'
 endif " }}}
 
 " vim-gitgutter {{{
@@ -108,8 +155,7 @@ if dein#tap('vim-localrc')
     endfunction
     execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
      \  'call s:vim_localrc_on_source()'
-endif
-" }}}
+endif " }}}
 
 " vim-rooter {{{
 if dein#tap('vim-rooter')
@@ -123,8 +169,7 @@ if dein#tap('vim-rooter')
     endfunction
     execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
      \  'call s:vim_rooter_on_source()'
-endif
-" }}}
+endif " }}}
 
 " Check dein {{{
 if dein#check_install()

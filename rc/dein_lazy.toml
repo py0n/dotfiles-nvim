@@ -40,6 +40,11 @@ pre_cmd = ['Unite']
 repo   = 'h1mesuke/vim-alignta'
 on_cmd = ['Align', 'AlignTsp', 'Alignta']
 
+# vim-easymotion
+[[plugins]]
+repo   = 'easymotion/vim-easymotion'
+on_map = ['/', '<Space>h', '<Space>j', '<Space>k', '<Space>l']
+
 # vim-fugitive
 [[plugins]]
 repo    = 'tpope/vim-fugitive'
