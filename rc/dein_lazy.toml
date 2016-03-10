@@ -1,3 +1,8 @@
+# MatchTagAlways
+[[plugins]]
+repo  = 'Valloric/MatchTagAlways'
+on_ft = ['html', 'jinja', 'xhtml', 'xml']
+
 # codic-vim
 [[plugins]]
 repo      = 'koron/codic-vim'

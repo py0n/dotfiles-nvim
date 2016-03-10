@@ -21,6 +21,12 @@ endif
 filetype plugin indent on
 " }}}
 
+" MatchTagAlways {{{
+if dein#tap('MatchTagAlways')
+    " https://github.com/Valloric/MatchTagAlways
+    " 対応するタグをハイライトする
+endif " }}}
+
 " linediff.vim " {{{
 if dein#tap('linediff.vim')
     " https://github.com/AndrewRadev/linediff.vim
