@@ -43,53 +43,11 @@ call s:source_rc('dein.vim')
 " }}}
 
 " Colorscheme & Syntax highlight {{{
-syntax enable
-
-colorscheme solarized
+call s:source_rc('colorscheme.vim')
 " }}}
 
 " Options {{{
-" See `:help option-summary`
-" On {{{
-set autoindent
-set backspace=indent,eol,start " :help 'backspace'
-set cindent
-set cmdheight=1
-set confirm
-set cursorline
-set expandtab    " タブを空白に展開
-set hidden
-set ignorecase   " case insesitiveな補完
-set hlsearch
-set incsearch
-set laststatus=2 " for lightline.vim
-set lazyredraw
-set modeline
-set modelines=10
-set shiftwidth=4 " インデント幅4
-set showcmd
-set scrolloff=4
-set showmatch
-set showmatch matchtime=1
-set smartcase    " 大文字を含むときはcase sentitiveな補完
-set smartindent
-set softtabstop=4
-set tabstop=4    " タブ幅4
-set title
-set wildmenu
-set wrapscan
-if has('vim_starting')
-    "set clipboard+=unnamed,autoselect
-    set cinoptions+=:0
-    set formatoptions+=mM
-    set nrformats-=octal " 8進数を無効にする (C-a, C-xなどに影響する)
-endif " }}}
-" Off {{{
-set noerrorbells
-set nonumber
-set noshowmode
-set novisualbell
-" }}}
+call s:source_rc('options.vim')
 " }}}
 
 " Autocmds {{{
@@ -109,21 +67,10 @@ vnoremap jk <Esc>
 " }}}
 
 " Filetypes {{{
-" vim {{{
-" http://kannokanno.hatenablog.com/entry/20120805/1344115812
-" ':help ft-vim-indent' を参照。
-function! s:set_vim_indent_cont()
-    if &shiftwidth >= 3
-        let g:vim_indent_cont=&shiftwidth-3
-    else
-        let g:vim_indent_cont=0
-    endif
-endfunction
-autocmd MyAugroup FileType vim call s:set_vim_indent_cont()
-" }}}
+call s:source_rc('filetypes.vim')
 " }}}
 
-" 編集・再読込 ============================================ {{{
+" 編集・再読込 {{{
 command! Ev edit   $MYVIMRC
 command! Rv source $MYVIMRC
 " }}}
