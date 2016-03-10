@@ -6,6 +6,18 @@ augroup MyAugroup
     autocmd!
 augroup END
 
+if has('vim_starting')
+    " http://rbtnn.hateblo.jp/entry/2014/11/30/174749
+    if &encoding !=# 'utf-8'
+        set encoding=japan
+        set fileencoding=japan
+    endif
+
+    scriptencoding utf-8
+    " ↑より前に日本語のコメントを書いてはいけない。
+    " http://rbtnn.hateblo.jp/entry/2014/11/30/174749
+endif
+
 " Environments {{{
 let $MYVIMRUNTIME = fnamemodify($MYVIMRC, ':p:h')
 let $MYVIMRCDIR   = $MYVIMRUNTIME . '/rc'
