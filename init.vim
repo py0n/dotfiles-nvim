@@ -20,7 +20,7 @@ endif
 
 " Environments {{{
 let $MYVIMRUNTIME = fnamemodify($MYVIMRC, ':p:h')
-let $MYVIMRCDIR   = $MYVIMRUNTIME . '/rc'
+let $MYVIMRCDIR   = $MYVIMRUNTIME . '/rc.d'
 
 let $MYDEINCACHEDIR = exists('$XDG_CACHE_HOME') ?
  \  $XDG_CACHE_HOME . '/dein' :
