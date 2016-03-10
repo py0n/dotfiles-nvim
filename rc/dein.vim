@@ -23,6 +23,43 @@ call dein#end()
 filetype plugin indent on
 " }}}
 
+" unite.vim {{{
+if dein#tap('unite.vim')
+    " https://github.com/Shougo/unite.vim
+    function! s:unite_vim_on_source() abort " {{{
+        call unite#custom#profile('default', 'context', {
+         \  'direction'        : 'botright',
+         \  'ignorecase'       : 1,
+         \  'prompt_direction' : 'top',
+         \  'smartcase'        : 1,
+         \  'start_insert'     : 1,
+         \  })
+    endfunction " }}}
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'call s:unite_vim_on_source()'
+
+    " バッファ及び最近使用したファイル一覧 (要 neomru)
+    nnoremap <C-P> :<C-u>Unite -buffer-name=files buffer file_mru<CR>
+    nnoremap <C-N> :<C-u>Unite -buffer-name=files file<CR>
+
+    " unite.vim呼び出し
+    " http://deris.hatenablog.jp/entry/2013/05/02/192415
+    nnoremap [unite]  <Nop>
+    nmap     <Space>u [unite]
+
+    " マーク (要 unite-mark)
+    nnoremap <silent> [unite]m :<C-u>Unite mark<CR>
+
+    " アウトライン (要 unite-outline)
+    " http://qiita.com/martini3oz/items/2cebdb805f45e7b4b901
+    nnoremap <silent> [unite]o :<C-u>Unite -vertical outline<CR>
+
+    " `<C-c>` で閉じる
+    autocmd MyAugroup FileType unite inoremap <silent> <buffer> <C-c> <ESC>:q<CR>
+    autocmd MyAugroup FileType unite nnoremap <silent> <buffer> <C-c> :q<CR>
+endif
+" }}}
+
 " vim-colors-solarized {{{
 if dein#tap('vim-colors-solarized')
     " http://ethanschoonover.com/solarized

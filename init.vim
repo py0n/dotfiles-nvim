@@ -26,17 +26,21 @@ function! s:source_rc(path, ...) abort "{{{
 endfunction " }}}
 " }}}
 
-" Initialization {{{
-augroup MyAugroup
-    autocmd!
-augroup END
-
+" Plugins {{{
 call s:source_rc('dein.vim')
 " }}}
 
-" Colorscheme {{{
+" Colorscheme & Syntax highlight {{{
 syntax enable
+
 colorscheme solarized
+" }}}
+
+" Settings {{{
+" case insesitiveな補完
+set ignorecase
+" 大文字を含むときはcase sentitiveな補完
+set smartcase
 " }}}
 
 " Keymaps {{{

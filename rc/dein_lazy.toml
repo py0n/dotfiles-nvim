@@ -1,3 +1,35 @@
+# codic-vim
+[[plugins]]
+repo      = 'koron/codic-vim'
+on_cmd    = ['Codic']
+on_source = ['unite-codic.vim']
+
+# neomru
+[[plugins]]
+repo      = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+# unite-codic.vim
+[[plugins]]
+repo      = 'rhysd/unite-codic.vim'
+depends   = ['codic-vim']
+on_source = ['unite.vim']
+
+# unite-mark
+[[plugins]]
+repo      = 'tacroe/unite-mark'
+on_source = ['unite.vim']
+
+# unite-outline
+[[plugins]]
+repo      = 'Shougo/unite-outline'
+on_source = ['unite.vim']
+
+# unite.vim
+[[plugins]]
+repo    = 'Shougo/unite.vim'
+pre_cmd = ['Unite']
+
 # vim-alignta
 [[plugins]]
 repo   = 'h1mesuke/vim-alignta'
@@ -13,3 +45,8 @@ on_func = ['fugitive#head']
 [[plugins]]
 repo    = 'airblade/vim-gitgutter'
 on_func = ['GitGutterGetHunkSummary']
+
+# vim-unite-giti
+[[plugins]]
+repo      = 'kmnk/vim-unite-giti'
+on_source = ['unite.vim']
