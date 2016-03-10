@@ -42,4 +42,9 @@ inoremap jk <Esc>
 vnoremap jk <Esc>
 " }}}
 
+" 編集・再読込 ============================================ {{{
+command! Ev edit   $MYVIMRC
+command! Rv source $MYVIMRC
+" }}}
+
 " vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
