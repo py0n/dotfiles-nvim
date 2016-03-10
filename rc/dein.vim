@@ -72,6 +72,32 @@ if dein#tap('unite.vim')
     autocmd MyAugroup FileType unite nnoremap <silent> <buffer> <C-c> :q<CR>
 endif " }}}
 
+" vim-anzu {{{
+if dein#tap('vim-anzu')
+    " https://github.com/osyo-manga/vim-anzu
+    " 現在の検索位置を画面に表示
+    function! s:vim_anzu_on_source() abort
+        " ヒットした檢索語が畫面中段に來るやうに
+        " `zz'を付加してゐる。
+        nmap n <Plug>(anzu-n-with-echo)zvzz
+        nmap N <Plug>(anzu-N-with-echo)zvzz
+        nmap * <Plug>(anzu-star-with-echo)zvzz
+        nmap # <Plug>(anzu-sharp-with-echo)zvzz
+
+        " 一定時間キー入力がないとき、ウインドウを移動したとき、
+        " タブを移動したときに検索ヒット数の表示を消去する。
+        augroup MyAugroupVimAnzu
+            autocmd!
+        augroup END
+        autocmd MyAugroupVimAnzu CursorHold  * call anzu#clear_search_status()
+        autocmd MyAugroupVimAnzu CursorHoldI * call anzu#clear_search_status()
+        autocmd MyAugroupVimAnzu WinLeave    * call anzu#clear_search_status()
+        autocmd MyAugroupVimAnzu TabLeave    * call anzu#clear_search_status()
+    endfunction
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'nested call s:vim_anzu_on_source()'
+endif " }}}
+
 " vim-colors-solarized {{{
 if dein#tap('vim-colors-solarized')
     " http://ethanschoonover.com/solarized

@@ -49,6 +49,11 @@ pre_cmd = ['Unite']
 repo   = 'h1mesuke/vim-alignta'
 on_cmd = ['Align', 'AlignTsp', 'Alignta']
 
+# vim-anzu
+[[plugins]]
+repo     = 'osyo-manga/vim-anzu'
+pre_func = ['anzu#']
+
 # vim-easymotion
 [[plugins]]
 repo   = 'easymotion/vim-easymotion'
