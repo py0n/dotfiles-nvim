@@ -35,6 +35,20 @@ syntax enable
 colorscheme solarized
 " }}}
 
+" Colorscheme {{{
+syntax enable
+if dein#tap('vim-colors-solarized')
+    " http://ethanschoonover.com/solarized
+    let g:solarized_contrast   = "high"
+    let g:solarized_hitrail    = 1
+    let g:solarized_termcolors = 256
+    let g:solarized_termtrans  = 1
+    let g:solarized_visibility = "high"
+    set background=dark
+    colorscheme solarized
+endif
+" }}}
+
 " Keymaps {{{
 " `<Esc>` を `jk` で代用する。
 " http://deris.hatenablog.jp/entry/2014/05/20/235807
