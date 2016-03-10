@@ -46,6 +46,11 @@ on_func = ['fugitive#head']
 repo    = 'airblade/vim-gitgutter'
 on_func = ['GitGutterGetHunkSummary']
 
+# vim-rooter
+[[plugins]]
+repo   = 'airblade/vim-rooter'
+on_cmd = ['Rooter']
+
 # vim-unite-giti
 [[plugins]]
 repo      = 'kmnk/vim-unite-giti'

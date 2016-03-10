@@ -102,6 +102,21 @@ if dein#tap('vim-localrc')
 endif
 " }}}
 
+" vim-rooter {{{
+if dein#tap('vim-rooter')
+    " https://github.com/airblade/vim-rooter
+    " 自動で `project root` に `lcd`
+    autocmd MyAugroup BufEnter * :Rooter
+
+    function! s:vim_rooter_on_source() abort
+        let g:rooter_silent_chdir = 1
+        let g:rooter_use_lcd      = 1
+    endfunction
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'call s:vim_rooter_on_source()'
+endif
+" }}}
+
 " Check dein {{{
 if dein#check_install()
     call dein#install()
