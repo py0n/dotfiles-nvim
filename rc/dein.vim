@@ -7,18 +7,16 @@ endif
 
 execute 'set runtimepath^=' . substitute(fnamemodify(s:dein_dir, ':p'), '/$', '', '')
 
-call dein#begin($MYDEINCACHEDIR)
-
 let s:dein_toml      = $MYVIMRCDIR . '/dein.toml'
 let s:dein_lazy_toml = $MYVIMRCDIR . '/dein_lazy.toml'
 
-if dein#load_cache([$MYVIMRC, s:dein_toml, s:dein_lazy_toml])
+if dein#load_state($MYDEINCACHEDIR)
+    call dein#begin($MYDEINCACHEDIR)
     call dein#load_toml(s:dein_toml,      {'lazy': 0})
     call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
-    call dein#save_cache()
+    call dein#end()
+    call dein#save_state()
 endif
-
-call dein#end()
 
 filetype plugin indent on
 " }}}
