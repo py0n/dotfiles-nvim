@@ -108,6 +108,21 @@ inoremap jk <Esc>
 vnoremap jk <Esc>
 " }}}
 
+" Filetypes {{{
+" vim {{{
+" http://kannokanno.hatenablog.com/entry/20120805/1344115812
+" ':help ft-vim-indent' を参照。
+function! s:set_vim_indent_cont()
+    if &shiftwidth >= 3
+        let g:vim_indent_cont=&shiftwidth-3
+    else
+        let g:vim_indent_cont=0
+    endif
+endfunction
+autocmd MyAugroup FileType vim call s:set_vim_indent_cont()
+" }}}
+" }}}
+
 " 編集・再読込 ============================================ {{{
 command! Ev edit   $MYVIMRC
 command! Rv source $MYVIMRC
