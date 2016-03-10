@@ -21,6 +21,15 @@ endif
 filetype plugin indent on
 " }}}
 
+" linediff.vim " {{{
+if dein#tap('linediff.vim')
+    " https://github.com/AndrewRadev/linediff.vim
+    " http://deris.hatenablog.jp/entry/2013/12/15/235606
+    " (使用法)
+    " 1. 比較したい行をvisual modeで選択して `Linediff` を実行
+    " 2. 比較対象の行をvisual modeで選択した上で再度 `Linediff` を実行
+endif " }}}
+
 " unite.vim {{{
 if dein#tap('unite.vim')
     " https://github.com/Shougo/unite.vim

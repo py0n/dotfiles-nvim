@@ -4,6 +4,11 @@ repo      = 'koron/codic-vim'
 on_cmd    = ['Codic']
 on_source = ['unite-codic.vim']
 
+# linediff.vim
+[[plugins]]
+repo   = 'AndrewRadev/linediff.vim'
+on_cmd = ['Linediff', 'LinediffReset']
+
 # neomru
 [[plugins]]
 repo      = 'Shougo/neomru.vim'
