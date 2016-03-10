@@ -90,10 +90,21 @@ if dein#tap('vim-gitgutter')
      \  'call s:vim_gitgutter_on_source()'
 endif " }}}
 
+" vim-localrc {{{
+if dein#tap('vim-localrc')
+    " https://github.com/thinca/vim-localrc
+    " http://d.hatena.ne.jp/thinca/20110108/1294427418
+    function! s:vim_localrc_on_source() abort
+        let g:localrc_filename = '.local.vim'
+    endfunction
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'call s:vim_localrc_on_source()'
+endif
+" }}}
+
 " Check dein {{{
 if dein#check_install()
     call dein#install()
 endif " }}}
 
 " vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
-

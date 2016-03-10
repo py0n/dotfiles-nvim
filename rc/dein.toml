@@ -6,6 +6,11 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'
 
+# vim-localrc
+[[plugins]]
+repo = 'thinca/vim-localrc'
+if   = '!has("win32unix")'
+
 # vim-surround
 [[plugins]]
 repo = 'tpope/vim-surround'
