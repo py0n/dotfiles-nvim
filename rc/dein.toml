@@ -2,6 +2,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# lightline.vim
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
 # vim-colors-solarized
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'

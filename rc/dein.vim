@@ -27,6 +27,13 @@ if dein#tap('MatchTagAlways')
     " 対応するタグをハイライトする
 endif " }}}
 
+" lightline.vim {{{
+if dein#tap('lightline.vim')
+    let g:lightline = {
+     \  'colorscheme' : 'solarized',
+     \  }
+endif " }}}
+
 " linediff.vim " {{{
 if dein#tap('linediff.vim')
     " https://github.com/AndrewRadev/linediff.vim
