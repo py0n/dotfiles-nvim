@@ -8,16 +8,16 @@ set confirm
 set cursorline
 set expandtab    " タブを空白に展開
 set hidden
+set hlsearch     " 検索語をハイライト
 set ignorecase   " case insesitiveな補完
-set hlsearch
 set incsearch
 set laststatus=2 " for lightline.vim
 set lazyredraw
 set modeline
 set modelines=10
+set scrolloff=4
 set shiftwidth=4 " インデント幅4
 set showcmd
-set scrolloff=4
 set showmatch
 set showmatch matchtime=1
 set smartcase    " 大文字を含むときはcase sentitiveな補完
