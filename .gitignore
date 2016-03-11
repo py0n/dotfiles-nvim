@@ -1,1 +1,6 @@
 .init.vim-rplugin~
+autoload/deoplete/
+doc/deoplete.txt
+plugin/deoplete.vim
+rplugin/python3/deoplete.py
+rplugin/python3/deoplete/
