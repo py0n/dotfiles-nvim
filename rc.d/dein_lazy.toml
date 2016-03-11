@@ -70,6 +70,11 @@ on_func = ['fugitive#head']
 repo    = 'airblade/vim-gitgutter'
 on_func = ['GitGutterGetHunkSummary']
 
+# vim-pandoc-syntax
+[[plugins]]
+repo  = 'vim-pandoc/vim-pandoc-syntax'
+on_ft = ['markdown', 'pandoc', 'rst']
+
 # vim-precious
 [[plugins]]
 repo    = 'osyo-manga/vim-precious'

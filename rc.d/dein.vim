@@ -196,6 +196,12 @@ if dein#tap('vim-localrc')
      \  'call s:vim_localrc_on_source()'
 endif " }}}
 
+" vim-pandoc-syntax {{{
+if dein#tap('vim-pandoc-syntax')
+    " https://github.com/vim-pandoc/vim-pandoc-syntax
+    autocmd MyAugroup BufNewFile,BufFilePRe,BufRead *.md set filetype=markdown.pandoc
+endif " }}}
+
 " vim-precious {{{
 if dein#tap('vim-precious')
     " https://github.com/osyo-manga/vim-precious

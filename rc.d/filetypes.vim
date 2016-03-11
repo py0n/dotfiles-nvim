@@ -1,3 +1,10 @@
+" markdown {{{
+" 禁則処理關係。
+autocmd MyAugroup FileType markdown setlocal display=lastline
+autocmd MyAugroup FileType markdown setlocal linebreak
+autocmd MyAugroup FileType markdown setlocal textwidth=0
+" }}}
+
 " vim {{{
 " http://kannokanno.hatenablog.com/entry/20120805/1344115812
 " ':help ft-vim-indent' を参照。
