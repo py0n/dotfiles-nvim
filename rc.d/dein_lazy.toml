@@ -65,6 +65,12 @@ repo    = 'tpope/vim-fugitive'
 on_cmd  = ['Gblame', 'Gdiff', 'Gstatus', 'Gwrite', 'Gvdiff']
 on_func = ['fugitive#head']
 
+# vim-gista
+[[plugins]]
+repo     = 'lambdalisue/vim-gista'
+on_cmd   = ['Gista']
+pre_func = ['gista#']
+
 # vim-gitgutter
 [[plugins]]
 repo    = 'airblade/vim-gitgutter'

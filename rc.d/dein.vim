@@ -170,6 +170,25 @@ if dein#tap('vim-fugitive')
      \  'doautoall fugitive BufNewFile'
 endif " }}}
 
+" vim-gista {{{
+if dein#tap('vim-gista')
+    " http://lambdalisue.hatenablog.com/entry/2014/07/01/203015
+    " https://github.com/lambdalisue/vim-gista
+    function! s:vim_gista_on_source() abort " {{{
+        if exists('g:gista#client#apinames')
+            for k in keys(g:gista#client#apinames)
+                " 以下の変数は `$HOME/.local.vim` で定義する
+                " g:gista#client#apinames (非標準の配列変数)
+                " g:gista#client#default_apiname
+                " g:gista#client#default_username
+                call gista#client#register(k, g:gista#client#apinames[k])
+            endfor
+        endif
+    endfunction " }}}
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'call s:vim_gista_on_source()'
+endif " }}}
+
 " vim-gitgutter {{{
 if dein#tap('vim-gitgutter')
     " https://github.com/airblade/vim-gitgutter
@@ -189,11 +208,7 @@ endif " }}}
 if dein#tap('vim-localrc')
     " https://github.com/thinca/vim-localrc
     " http://d.hatena.ne.jp/thinca/20110108/1294427418
-    function! s:vim_localrc_on_source() abort
-        let g:localrc_filename = '.local.vim'
-    endfunction
-    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
-     \  'call s:vim_localrc_on_source()'
+    let g:localrc_filename = '.local.vim'
 endif " }}}
 
 " vim-pandoc-syntax {{{
