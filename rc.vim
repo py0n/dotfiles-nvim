@@ -62,10 +62,6 @@ call s:source_rc('marks.vim')
 call s:source_rc('keymaps.vim')
 " }}}
 
-" Filetypes {{{
-call s:source_rc('filetypes.vim')
-" }}}
-
 " 編集・再読込 {{{
 command! Ev edit   $MYVIMRC
 command! Rv source $MYVIMRC
