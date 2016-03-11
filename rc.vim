@@ -51,19 +51,11 @@ call s:source_rc('options.vim')
 " }}}
 
 " Autocmds {{{
-" 自動的にディレクトリを作成する。
-" http://vim-users.jp/2011/02/hack202/
-autocmd MyAugroup BufWritePre * call mkdir(expand('<afile>:p:h'), 'p')
-" インサートモードから抜ける際にペーストモードも抜ける
-" http://qiita.com/quwa/items/019250dbca167985fe32
-autocmd MyAugroup InsertLeave * set nopaste
+call s:source_rc('autocmds.vim')
 " }}}
 
 " Keymaps {{{
-" `<Esc>` を `jk` で代用する。
-" http://deris.hatenablog.jp/entry/2014/05/20/235807
-inoremap jk <Esc>
-vnoremap jk <Esc>
+call s:source_rc('keymaps.vim')
 " }}}
 
 " Filetypes {{{
