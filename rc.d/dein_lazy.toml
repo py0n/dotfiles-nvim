@@ -57,7 +57,7 @@ pre_func = ['anzu#']
 # vim-easymotion
 [[plugins]]
 repo   = 'easymotion/vim-easymotion'
-on_map = ['/', '<Space>h', '<Space>j', '<Space>k', '<Space>l']
+on_map = ['/', '<Space>h', '<Space>j', '<Space>k', '<Space>l', '<Space>w', 's']
 
 # vim-fugitive
 [[plugins]]
