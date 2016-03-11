@@ -19,6 +19,17 @@ if   = '!has("win32unix")'
 [[plugins]]
 repo = 'tpope/vim-surround'
 
+# vimproc
+[[plugins]]
+repo = 'Shougo/vimproc'
+
+  [plugins.build]
+  windows = 'tools\\update-dll-mingw'
+  cygwin  = 'make -f make_cygwin.mak'
+  mac     = 'make -f make_mac.mak'
+  linux   = 'make'
+  unix    = 'gmake'
+
 # wildfire.vim
 [[plugins]]
 repo = 'gcmt/wildfire.vim'

@@ -67,6 +67,10 @@ if dein#tap('unite.vim')
     nnoremap [unite]  <Nop>
     nmap     <Space>u [unite]
 
+    " grep
+    nnoremap <silent> [unite]g :<C-u>Unite grep -buffer-name=search-buffer<CR>
+    nnoremap <silent> [unite]r :<C-u>UniteResume search-buffer<CR>
+
     " マーク (要 unite-mark)
     nnoremap <silent> [unite]m :<C-u>Unite mark<CR>
 
@@ -77,6 +81,34 @@ if dein#tap('unite.vim')
     " `<C-c>` で閉じる
     autocmd MyAugroup FileType unite inoremap <silent> <buffer> <C-c> <ESC>:q<CR>
     autocmd MyAugroup FileType unite nnoremap <silent> <buffer> <C-c> :q<CR>
+
+    " grep {{{
+    " unite grep で pt を利用する
+    " Ref. help unite-source-grep
+    " http://blog.monochromegane.com/blog/2013/09/18/ag-and-unite/
+    if executable('pt')
+        " Use pt in unite grep source.
+        " https://github.com/monochromegane/the_platinum_searcher
+        let g:unite_source_grep_command       = 'pt'
+        let g:unite_source_grep_default_opts  = '--nogroup --nocolor'
+        let g:unite_source_grep_encoding      = 'utf-8'
+        let g:unite_source_grep_recursive_opt = ''
+    elseif executable('ag')
+        " Use ag in unite grep source.
+        let g:unite_source_grep_command       = 'ag'
+        let g:unite_source_grep_default_opts  =
+         \  '-i --line-numbers --nocolor --nogroup --hidden --ignore ' .
+         \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+        let g:unite_source_grep_recursive_opt = ''
+    elseif executable('ack-grep')
+        " Use ack in unite grep source.
+        let g:unite_source_grep_command       = 'ack-grep'
+        let g:unite_source_grep_default_opts  =
+         \  '-i --no-heading --no-color -k -H'
+        let g:unite_source_grep_recursive_opt = ''
+    endif
+    let g:unite_source_history_yank_list = 10000
+    " }}}
 endif " }}}
 
 " vim-anzu {{{
