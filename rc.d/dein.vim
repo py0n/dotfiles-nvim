@@ -302,4 +302,16 @@ if dein#check_install()
     call dein#install()
 endif " }}}
 
+" deoplete {{{
+" https://github.com/Shougo/deoplete.nvim
+if has('nvim') && has('python3')
+    " `deoplete.nvim` が `dein.vim` で管理できるようになるまで此で凌ぐ。
+    let s:deoplete_dir = $MYDEINCACHEDIR . '/repos/github.com/Shougo/deoplete.nvim'
+    if !isdirectory(s:deoplete_dir)
+        execute '!git clone https://github.com/Shougo/deoplete.nvim.git' s:deoplete_dir
+    endif
+    execute 'set runtimepath^=' . substitute(fnamemodify(s:deoplete_dir, ':p'), '/$', '', '')
+    let g:deoplete#enable_at_startup = 1
+endif " }}}
+
 " vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
