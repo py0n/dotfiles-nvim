@@ -54,6 +54,10 @@ call s:source_rc('options.vim')
 call s:source_rc('autocmds.vim')
 " }}}
 
+" Marks {{{
+call s:source_rc('marks.vim')
+" }}}
+
 " Keymaps {{{
 call s:source_rc('keymaps.vim')
 " }}}
