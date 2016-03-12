@@ -1,13 +1,25 @@
-setlocal smarttab
+" # Reference
+"
+" * $VIMRUNTIME/ftplugin/perl.vim
+" * http://whileimautomaton.net/2008/09/07213145
+"   * Vim: Filetype pluginを極める
 
-nnoremap [perl]   <Nop>
-nmap     <Space>p [perl]
+let s:save_cpo = &cpo
+set cpo-=C
+
+nnoremap <buffer> [perl]   <Nop>
+nmap     <buffer> <Space>p [perl]
 nnoremap <buffer> [perl]f :%!perltidy<CR>
-vnoremap [perl]   <Nop>
-vmap     <Space>p [perl]
+vnoremap <buffer> [perl]   <Nop>
+vmap     <buffer> <Space>p [perl]
 vnoremap <buffer> [perl]f :!perltidy<CR>
 
 " Vimでカーソル下のPerlモジュールを開く
 " http://d.hatena.ne.jp/spiritloose/20060817/1155808744
 setlocal isfname-=-
+setlocal smarttab
 
+let b:undo_ftplugin = 'setlocal isfname< smarttab<'
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
