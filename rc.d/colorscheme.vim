@@ -1,3 +1,5 @@
+" Colorscheme & Syntax highlight
+
 syntax enable
 
 colorscheme solarized
