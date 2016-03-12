@@ -30,7 +30,9 @@ endif " }}}
 " lightline.vim {{{
 if dein#tap('lightline.vim')
     let g:lightline = {
-     \  'colorscheme' : 'solarized',
+     \  'colorscheme'  : 'solarized',
+     \  'separator'    : {'left': '', 'right': ''},
+     \  'subseparator' : {'left': '', 'right': ''},
      \  }
 endif " }}}
 
