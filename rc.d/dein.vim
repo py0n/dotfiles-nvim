@@ -27,6 +27,26 @@ if dein#tap('MatchTagAlways')
     " 対応するタグをハイライトする
 endif " }}}
 
+" ghcmod-vim {{{
+if dein#tap('ghcmod-vim')
+    " https://github.com/eagletmt/ghcmod-vim
+    function! s:ghcmod_vim_on_source() abort " {{{
+        augroup MyAugroupGhcmodVim
+            autocmd BufWritePost,FileWritePost *.hs :GhcModCheck
+
+            autocmd Filetype haskell nnoremap [ghcmod] <Nop>
+            autocmd Filetype haskell nmap     <Space>g [ghcmod]
+
+            autocmd FileType haskell nnoremap <buffer> [ghcmod]c  :GhcModCheck<CR>
+            autocmd FileType haskell nnoremap <buffer> [ghcmod]l  :GhcModLint<CR>
+            autocmd FileType haskell nnoremap <buffer> [ghcmod]t  :GhcModTypeClear<CR>:GhcModType<CR>
+            autocmd FileType haskell nnoremap <buffer> [ghcmod]tc :GhcModTypeClear<CR>
+        augroup END
+    endfunction " }}}
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'nested call s:ghcmod_vim_on_source()'
+endif " }}}
+
 " lightline.vim {{{
 if dein#tap('lightline.vim')
     let g:lightline = {
@@ -43,6 +63,31 @@ if dein#tap('linediff.vim')
     " (使用法)
     " 1. 比較したい行をvisual modeで選択して `Linediff` を実行
     " 2. 比較対象の行をvisual modeで選択した上で再度 `Linediff` を実行
+endif " }}}
+
+" unite-haddock {{{
+if dein#tap('unite-haddock')
+    " http://eagletmt.hateblo.jp/entry/2012/03/17/194950
+    " https://github.com/eagletmt/unite-haddock
+    " `unite.vim` で `hoogle` を使ふ
+    "
+    " :Unite hoogle
+    "   `p` でカーソル行のパッケージをプレビュー表示
+    "
+    " :Unite -auto-preview hoogle
+    "   カーソル行のパッケージを自動でプレビュー表示
+    "
+    " :UniteWithCursorWord hoogle
+    "   カーソル位置の單語で検索
+    function! s:unite_haddock_on_source() abort " {{{
+        let g:unite_source_haddock_browser = 'w3m'
+        augroup MyAugroupUniteHaddock
+            autocmd Filetype haskell nnoremap <buffer> [unite]h :Unite -auto-preview hoogle<CR>
+            autocmd Filetype haskell nnoremap <buffer> [unite]w :UniteWithCursorWord hoogle<CR>
+        augroup END
+    endfunction " }}}
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'nested call s:unite_haddock_on_source()'
 endif " }}}
 
 " unite.vim {{{

@@ -13,6 +13,12 @@ on_source = ['unite-codic.vim']
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
+# ghcmod-vim
+[[plugins]]
+repo    = 'eagletmt/ghcmod-vim'
+depends = ['vimproc']
+on_ft   = ['haskell']
+
 # linediff.vim
 [[plugins]]
 repo   = 'AndrewRadev/linediff.vim'
@@ -38,6 +44,12 @@ on_source = ['unite.vim']
 [[plugins]]
 repo      = 'Shougo/unite-outline'
 on_source = ['unite.vim']
+
+# unite-haddock
+[[plugins]]
+repo    = 'eagletmt/unite-haddock'
+depends = ['unite.vim']
+on_ft   = ['haskell']
 
 # unite.vim
 [[plugins]]
