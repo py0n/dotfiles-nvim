@@ -27,6 +27,10 @@ if dein#tap('MatchTagAlways')
     " 対応するタグをハイライトする
 endif " }}}
 
+" deoplete-go {{{
+if dein#tap('deoplete-go')
+endif " }}}
+
 " ghcmod-vim {{{
 if dein#tap('ghcmod-vim')
     " https://github.com/eagletmt/ghcmod-vim
@@ -285,6 +289,23 @@ if dein#tap('vim-gitgutter')
     endfunction
     execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
      \  'call s:vim_gitgutter_on_source()'
+endif " }}}
+
+" vim-go {{{
+if dein#tap('vim-go')
+endif " }}}
+
+" vim-go-extra {{{
+if 0 && dein#tap('vim-go-extra')
+    " https://github.com/vim-jp/vim-go-extra
+    function! s:vim_go_extra_on_source() abort " {{{
+        let g:gofmt_command = 'goimports'
+        augroup MyAugroupVimGoExtra
+            autocmd BufWritePre *.go Fmt
+        augroup END
+    endfunction " }}}
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'nested call s:vim_go_extra_on_source()'
 endif " }}}
 
 " vim-localrc {{{

@@ -13,6 +13,15 @@ on_source = ['unite-codic.vim']
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
+# deoplete-go
+[[plugins]]
+repo  = 'zchee/deoplete-go'
+on_ft = ['go']
+
+  [plugins.build]
+  linux = 'make'
+  unix  = 'gmake'
+
 # ghcmod-vim
 [[plugins]]
 repo    = 'eagletmt/ghcmod-vim'
@@ -87,6 +96,17 @@ pre_func = ['gista#']
 [[plugins]]
 repo    = 'airblade/vim-gitgutter'
 on_func = ['GitGutterGetHunkSummary']
+
+# vim-go
+[[plugins]]
+repo  = 'fatih/vim-go'
+on_ft = ['go']
+
+## vim-go-extra
+#[[plugins]]
+#repo    = 'vim-jp/vim-go-extra'
+#depends = ['vimproc']
+#on_ft   = ['go']
 
 # vim-pandoc-syntax
 [[plugins]]
