@@ -99,9 +99,7 @@ if dein#tap('unite.vim')
          \  'ignorecase'       : 1,
          \  'prompt_direction' : 'top',
          \  'smartcase'        : 1,
-         \  })
-        call unite#custom#profile('action', 'context', {
-         \  'start_insert' : 1,
+         \  'start_insert'     : 1,
          \  })
     endfunction " }}}
     execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
