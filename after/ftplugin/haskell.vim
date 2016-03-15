@@ -5,6 +5,12 @@
 let s:save_cpo = &cpo
 set cpo-=C
 
+if (executable('stack'))
+    nnoremap <buffer> [stack]  <Nop>
+    nmap     <buffer> <Space>s [stack]
+    nnoremap <buffer> [stack]t :!stack test<CR>
+endif
+
 setlocal nosmartindent
 setlocal shiftwidth=2
 setlocal softtabstop=2
