@@ -5,10 +5,11 @@
 let s:save_cpo = &cpo
 set cpo-=C
 
+nnoremap <buffer> [haskell] <Nop>
+nmap     <buffer> <Space>s  [haskell]
+
 if (executable('stack'))
-    nnoremap <buffer> [stack]  <Nop>
-    nmap     <buffer> <Space>s [stack]
-    nnoremap <buffer> [stack]t :!stack test<CR>
+    nnoremap <buffer> [haskell]t :!stack test<CR>
 endif
 
 setlocal nosmartindent
