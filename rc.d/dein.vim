@@ -162,6 +162,21 @@ if dein#tap('unite.vim')
     " }}}
 endif " }}}
 
+" vim-alignta {{{
+if dein#tap('vim-alignta')
+    " https://github.com/h1mesuke/vim-alignta
+    function! s:vim_alignta_on_source() abort " {{{
+        " http://nanasi.jp/articles/vim/align/align_vim_ext.html#alignctrl
+        " `AilgnCtrl` で変更した設定を初期状態に戻す
+        command! -nargs=0 AlignReset call Align#AlignCtrl('default')
+        " http://nanasi.jp/articles/vim/align/align_vim_mapt.html#leader-tsp-leader-tsp
+        " 空白揃へ (ref. \tsp or \Tsp)
+        command! -range -nargs=? AlignTsp :<line1>,<line2>Alignta <args> \S\+
+    endfunction " }}}
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \	'call s:vim_alignta_on_source()'
+endif " }}}
+
 " vim-anzu {{{
 if dein#tap('vim-anzu')
     " https://github.com/osyo-manga/vim-anzu
