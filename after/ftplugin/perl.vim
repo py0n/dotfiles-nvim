@@ -8,10 +8,11 @@ let s:save_cpo = &cpo
 set cpo-=C
 
 nnoremap <buffer> [perl]   <Nop>
-nmap     <buffer> <Space>p [perl]
-nnoremap <buffer> [perl]f :%!perltidy<CR>
+nmap     <buffer> <Space>t [perl]
 vnoremap <buffer> [perl]   <Nop>
-vmap     <buffer> <Space>p [perl]
+vmap     <buffer> <Space>t [perl]
+
+nnoremap <buffer> [perl]f :%!perltidy<CR>
 vnoremap <buffer> [perl]f :!perltidy<CR>
 
 " Vimでカーソル下のPerlモジュールを開く
