@@ -5,9 +5,9 @@
 let s:save_cpo = &cpo
 set cpo-=C
 
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
+setlocal noexpandtab
+setlocal tabstop=4
+setlocal shiftwidth=4
 
 let b:undo_ftplugin = 'setlocal noexpandtab< shiftwidth< tabstop<'
 
