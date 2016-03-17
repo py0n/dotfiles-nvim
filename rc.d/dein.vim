@@ -308,6 +308,17 @@ endif " }}}
 
 " vim-go {{{
 if dein#tap('vim-go')
+    " https://github.com/fatih/vim-go
+    function! s:vim_go_on_source() abort " {{{
+        augroup MyAugroupVimGo
+            autocmd!
+            autocmd Filetype go nnoremap <buffer> [go]f :GoFmt
+            autocmd Filetype go nnoremap <buffer> [go]l :GoLint
+            autocmd Filetype go nnoremap <buffer> [go]t :GoTest
+        augroup END
+    endfunction " }}}
+    execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
+     \  'nested call s:vim_go_on_source()'
 endif " }}}
 
 " vim-go-extra {{{
