@@ -9,4 +9,11 @@ nnoremap Q  <Nop>
 inoremap jk <Esc>
 vnoremap jk <Esc>
 
+" コマンドラインモードでの履歴移動改善。
+" http://lingr.com/room/vim/archives/2014/12/13#message-20830819
+cnoremap <Up>   <C-p>
+cnoremap <Down> <C-n>
+cnoremap <C-p>  <Up>
+cnoremap <C-n>  <Down>
+
 " vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
