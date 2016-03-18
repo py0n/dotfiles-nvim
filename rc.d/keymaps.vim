@@ -16,4 +16,7 @@ cnoremap <Down> <C-n>
 cnoremap <C-p>  <Up>
 cnoremap <C-n>  <Down>
 
+" 分割ウィンドウの高さ変更。
+nnoremap + <C-w>+
+nnoremap - <C-w>-
 " vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
