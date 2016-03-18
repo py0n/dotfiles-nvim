@@ -7,6 +7,12 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 augroup filetypedetect
+    " html {{{
+    autocmd BufRead,BufNewFile *.tmpl setlocal filetype=html
+    " }}}
+    " markdown {{{
+    autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
+    " }}}
     " perl {{{
     autocmd BufRead,BufNewFile *.p[lm] setlocal filetype=perl
     autocmd BufRead,BufNewFile *.psgi  setlocal filetype=perl
