@@ -3,6 +3,11 @@
 repo  = 'Valloric/MatchTagAlways'
 on_ft = ['html', 'jinja', 'xhtml', 'xml']
 
+# agit.vim
+[[plugins]]
+repo   = 'cohama/agit.vim'
+on_cmd = ['Agit', 'AgitFile']
+
 # codic-vim
 [[plugins]]
 repo      = 'koron/codic-vim'
