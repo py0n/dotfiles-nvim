@@ -2,28 +2,29 @@
 " On {{{
 set autoindent
 set backspace=indent,eol,start " :help 'backspace'
+set belloff=all                " 全てのベルを停止
 set cindent
 set cmdheight=1
 set confirm
 set cursorline
-set expandtab    " タブを空白に展開
+set expandtab                  " タブを空白に展開
 set hidden
-set hlsearch     " 検索語をハイライト
-set ignorecase   " case insesitiveな補完
+set hlsearch                   " 検索語をハイライト
+set ignorecase                 " case insesitiveな補完
 set incsearch
-set laststatus=2 " for lightline.vim
+set laststatus=2               " for lightline.vim
 set lazyredraw
 set modeline
 set modelines=10
 set scrolloff=4
-set shiftwidth=4 " インデント幅4
+set shiftwidth=4               " インデント幅4
 set showcmd
 set showmatch
 set showmatch matchtime=1
-set smartcase    " 大文字を含むときはcase sentitiveな補完
+set smartcase                  " 大文字を含むときはcase sentitiveな補完
 set smartindent
 set softtabstop=4
-set tabstop=4    " タブ幅4
+set tabstop=4                  " タブ幅4
 set title
 set wildmenu
 set wrapscan
