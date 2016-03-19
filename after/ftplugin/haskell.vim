@@ -6,9 +6,11 @@ let s:save_cpo = &cpo
 set cpo-=C
 
 nnoremap <buffer> [haskell] <Nop>
-nmap     <buffer> <Space>s  [haskell]
+nmap     <buffer> <Space>t  [haskell]
 
 if (executable('stack'))
+    " f:format, t:test
+    nnoremap <buffer> [haskell]f :%!stylish-haskell<CR>
     nnoremap <buffer> [haskell]t :!stack test<CR>
 endif
 

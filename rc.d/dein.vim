@@ -36,15 +36,12 @@ if dein#tap('ghcmod-vim')
     " https://github.com/eagletmt/ghcmod-vim
     function! s:ghcmod_vim_on_source() abort " {{{
         augroup MyAugroupGhcmodVim
-            autocmd BufWritePost,FileWritePost *.hs :GhcModCheck
+            autocmd BufWritePost  *.hs :GhcModCheckAndLintAsync
+            autocmd FileWritePost *.hs :GhcModCheckAndLintAsync
 
-            autocmd Filetype haskell nnoremap [ghcmod] <Nop>
-            autocmd Filetype haskell nmap     <Space>g [ghcmod]
-
-            autocmd FileType haskell nnoremap <buffer> [ghcmod]c  :GhcModCheck<CR>
-            autocmd FileType haskell nnoremap <buffer> [ghcmod]l  :GhcModLint<CR>
-            autocmd FileType haskell nnoremap <buffer> [ghcmod]t  :GhcModTypeClear<CR>:GhcModType<CR>
-            autocmd FileType haskell nnoremap <buffer> [ghcmod]tc :GhcModTypeClear<CR>
+            " i:inspect, l:lint
+            autocmd FileType haskell nnoremap <buffer> [haskell]i :GhcModTypeClear<CR>:GhcModType<CR>
+            autocmd FileType haskell nnoremap <buffer> [haskell]l :GhcModCheckAndLint<CR>
         augroup END
     endfunction " }}}
     execute 'autocmd MyAugroup User' 'dein#source#'.g:dein#name
