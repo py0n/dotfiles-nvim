@@ -16,6 +16,7 @@ set laststatus=2               " for lightline.vim
 set lazyredraw
 set modeline
 set modelines=10
+set mouse=                     " マウスを無効
 set scrolloff=4
 set shiftwidth=4               " インデント幅4
 set showcmd
