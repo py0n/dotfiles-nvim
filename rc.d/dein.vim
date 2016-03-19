@@ -297,6 +297,10 @@ if dein#tap('vim-gitgutter')
     " デフォルトでは以下のキーマップが設定されている。
     " nmap ]c <Plug>GitGutterNextHunk
     " nmap [c <Plug>GitGutterPrevHunk
+
+    autocmd MyAugroup BufReadPost  * call GitGutterGetHunkSummary()
+    autocmd MyAugroup BufWritePost * call GitGutterGetHunkSummary()
+
     function! s:vim_gitgutter_on_source() abort
         let g:gitgutter_sign_added    = '✚'
         let g:gitgutter_sign_modified = '➜'
