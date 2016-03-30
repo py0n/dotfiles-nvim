@@ -19,6 +19,9 @@ augroup filetypedetect
     autocmd BufRead,BufNewFile *.t     setlocal filetype=perl
     autocmd BufRead,BufNewFile *.cgi   setlocal filetype=perl
     autocmd BufRead,BufNewFile *.tdy   setlocal filetype=perl
+    " toml {{{
+    autocmd BufRead,BufNewFile *.toml setlocal filetype=toml
+    " }}}
     " }}}
 augroup END
 
