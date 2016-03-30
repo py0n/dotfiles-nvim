@@ -1,23 +1,159 @@
+# MatchTagAlways
+[[plugins]]
+repo  = 'Valloric/MatchTagAlways'
+on_ft = ['html', 'jinja', 'xhtml', 'xml']
+
+# agit.vim
+[[plugins]]
+repo   = 'cohama/agit.vim'
+on_cmd = ['Agit', 'AgitFile']
+
+# codic-vim
+[[plugins]]
+repo      = 'koron/codic-vim'
+on_cmd    = ['Codic']
+on_source = ['unite-codic.vim']
+
+# context_filetype.vim
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
 # dein.vim
 [[plugins]]
 repo = 'Shougo/dein.vim'
+
+# deoplete-go
+[[plugins]]
+repo  = 'zchee/deoplete-go'
+on_ft = ['go']
+
+  [plugins.build]
+  linux = 'make'
+  unix  = 'gmake'
+
+# ghcmod-vim
+[[plugins]]
+repo    = 'eagletmt/ghcmod-vim'
+depends = ['vimproc']
+on_ft   = ['haskell']
 
 # lightline.vim
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 
+# linediff.vim
+[[plugins]]
+repo   = 'AndrewRadev/linediff.vim'
+on_cmd = ['Linediff', 'LinediffReset']
+
+# neomru
+[[plugins]]
+repo      = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+# unite-codic.vim
+[[plugins]]
+repo      = 'rhysd/unite-codic.vim'
+depends   = ['codic-vim']
+on_source = ['unite.vim']
+
+# unite-mark
+[[plugins]]
+repo      = 'tacroe/unite-mark'
+on_source = ['unite.vim']
+
+# unite-outline
+[[plugins]]
+repo      = 'Shougo/unite-outline'
+on_source = ['unite.vim']
+
+# unite-haddock
+[[plugins]]
+repo    = 'eagletmt/unite-haddock'
+depends = ['unite.vim']
+on_ft   = ['haskell']
+
+# unite.vim
+[[plugins]]
+repo    = 'Shougo/unite.vim'
+pre_cmd = ['Unite']
+
+# vim-alignta
+[[plugins]]
+repo   = 'h1mesuke/vim-alignta'
+on_cmd = ['Align', 'AlignTsp', 'Alignta']
+
+# vim-anzu
+[[plugins]]
+repo     = 'osyo-manga/vim-anzu'
+pre_func = ['anzu#']
+
 # vim-colors-solarized
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'
+
+# vim-easymotion
+[[plugins]]
+repo   = 'easymotion/vim-easymotion'
+on_map = ['/', '<Space>h', '<Space>j', '<Space>k', '<Space>l', '<Space>w', 's']
+
+# vim-fugitive
+[[plugins]]
+repo    = 'tpope/vim-fugitive'
+on_cmd  = ['Gblame', 'Gcommit', 'Gdiff', 'Gstatus', 'Gwrite', 'Gvdiff']
+on_func = ['fugitive#head']
+
+# vim-gista
+[[plugins]]
+repo     = 'lambdalisue/vim-gista'
+on_cmd   = ['Gista']
+pre_func = ['gista#']
+
+# vim-gitgutter
+[[plugins]]
+repo    = 'airblade/vim-gitgutter'
+on_func = ['GitGutterGetHunkSummary']
+
+# vim-go
+[[plugins]]
+repo  = 'fatih/vim-go'
+on_ft = ['go']
+
+## vim-go-extra
+#[[plugins]]
+#repo    = 'vim-jp/vim-go-extra'
+#depends = ['vimproc']
+#on_ft   = ['go']
 
 # vim-localrc
 [[plugins]]
 repo = 'thinca/vim-localrc'
 if   = '!has("win32unix")'
 
+# vim-pandoc-syntax
+[[plugins]]
+repo  = 'vim-pandoc/vim-pandoc-syntax'
+on_ft = ['markdown', 'pandoc', 'rst']
+
+# vim-precious
+[[plugins]]
+repo    = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+on_ft   = ['html']
+
+# vim-rooter
+[[plugins]]
+repo   = 'airblade/vim-rooter'
+on_cmd = ['Rooter']
+
 # vim-surround
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+# vim-unite-giti
+[[plugins]]
+repo      = 'kmnk/vim-unite-giti'
+on_source = ['unite.vim']
 
 # vimproc
 [[plugins]]
