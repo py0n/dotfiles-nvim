@@ -8,8 +8,8 @@ colorscheme solarized
 " http://blog.remora.cx/2012/10/spotlight-cursor-line.html
 highlight clear CursorLine
 highlight CursorLine ctermbg=magenta ctermfg=lightgray cterm=NONE term=reverse
-autocmd MyAugroup InsertEnter * set nocursorline
-autocmd MyAugroup InsertLeave * set cursorline
+autocmd MyAugroup BufLeave,InsertEnter * setlocal nocursorline
+autocmd MyAugroup BufEnter,InsertLeave * setlocal cursorline
 " }}}
 
 " 行末の空白及び全角空白を目立たせる {{{
