@@ -419,6 +419,9 @@ hook_add = '''
 repo    = 'plasticboy/vim-markdown'
 depends = ['tabular']
 on_ft   = ['markdown']
+hook_add = '''
+    let g:vim_markdown_folding_level = 2
+'''
 # }}}
 
 # vim-precious {{{
