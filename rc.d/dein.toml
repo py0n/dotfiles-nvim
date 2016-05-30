@@ -383,6 +383,7 @@ hook_add = '''
 repo     = 'fatih/vim-go'
 on_ft    = ['go']
 hook_add = '''
+    let g:go_fmt_command = 'goimports'
     autocmd MyAugroup Filetype go nnoremap <buffer> [go]f :GoFmt
     autocmd MyAugroup Filetype go nnoremap <buffer> [go]l :GoLint
     autocmd MyAugroup Filetype go nnoremap <buffer> [go]t :GoTest
