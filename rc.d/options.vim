@@ -30,7 +30,7 @@ set title
 set wildmenu
 set wrapscan
 if has('vim_starting')
-    "set clipboard+=unnamed,autoselect
+    set clipboard+=unnamedplus " 要 xclip or xsel
     set cinoptions+=:0
     set formatoptions+=mM
     set nrformats-=octal " 8進数を無効にする (C-a, C-xなどに影響する)
