@@ -1,28 +1,13 @@
-" Ref. $VIMRUNTIME/filetype.vim
-if exists('did_load_filetypes')
-    finish
-endif
-
+" Line continuation is used here, remove 'C' from 'cpoptions'
 let s:cpo_save = &cpo
 set cpo&vim
 
 augroup filetypedetect
-    " html {{{
-    autocmd BufRead,BufNewFile *.tmpl setlocal filetype=html
-    " }}}
-    " markdown {{{
-    autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
-    " }}}
-    " perl {{{
     autocmd BufRead,BufNewFile *.p[lm] setlocal filetype=perl
     autocmd BufRead,BufNewFile *.psgi  setlocal filetype=perl
     autocmd BufRead,BufNewFile *.t     setlocal filetype=perl
     autocmd BufRead,BufNewFile *.cgi   setlocal filetype=perl
     autocmd BufRead,BufNewFile *.tdy   setlocal filetype=perl
-    " toml {{{
-    autocmd BufRead,BufNewFile *.toml setlocal filetype=toml
-    " }}}
-    " }}}
 augroup END
 
 let &cpo = s:cpo_save
