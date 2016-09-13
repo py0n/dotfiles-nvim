@@ -17,7 +17,9 @@ let $MYDEINCACHEDIR = exists('$XDG_CACHE_HOME') ?
 " }}}
 
 " Deirectories {{{
-call mkdir($MYDEINCACHEDIR, 'p')
+if !isdirectory($MYDEINCACHEDIR)
+    call mkdir($MYDEINCACHEDIR, 'p')
+endif
 " }}}
 
 " Functions {{{
