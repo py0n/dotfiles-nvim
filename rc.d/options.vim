@@ -3,6 +3,7 @@
 set autoindent
 set backspace=indent,eol,start " :help 'backspace'
 set belloff=all                " 全てのベルを停止
+set breakindent
 set cindent
 set cmdheight=1
 set confirm
