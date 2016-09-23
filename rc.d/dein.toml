@@ -6,10 +6,11 @@ repo  = 'Valloric/MatchTagAlways'
 on_ft = ['html', 'jinja', 'xhtml', 'xml']
 # }}}
 
-# agit.vim
+# agit.vim {{{
 [[plugins]]
 repo   = 'cohama/agit.vim'
 on_cmd = ['Agit', 'AgitFile']
+# }}}
 
 # context_filetype.vim {{{
 # https://github.com/Shougo/context_filetype.vim
@@ -36,9 +37,10 @@ hook_add = '''
 '''
 # }}}
 
-# dein.vim
+# dein.vim {{{
 [[plugins]]
 repo = 'Shougo/dein.vim'
+# }}}
 
 # denite.nvim {{{
 [[plugins]]
@@ -569,9 +571,10 @@ hook_source = '''
 '''
 # }}}
 
-# vim-surround
+# vim-surround {{{
 [[plugins]]
 repo = 'tpope/vim-surround'
+# }}}
 
 # vimproc {{{
 [[plugins]]
