@@ -44,9 +44,8 @@ repo = 'Shougo/dein.vim'
 
 # denite.nvim {{{
 [[plugins]]
-repo   = 'Shougo/denite.nvim'
-lazy   = 1
-on_cmd = ['Denite']
+repo     = 'Shougo/denite.nvim'
+on_cmd   = ['Denite']
 hook_add = '''
     nnoremap <C-p> :<C-u>Denite file_mru<CR>
     nnoremap <C-n> :<C-u>Denite file_rec<CR>
