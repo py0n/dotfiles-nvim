@@ -20,13 +20,6 @@ endif
 filetype plugin indent on
 " }}}
 
-" deoplete {{{
-" https://github.com/Shougo/deoplete.nvim
-if has('nvim') && has('python3')
-    let g:deoplete#enable_at_startup = 1
-    call dein#add('Shougo/deoplete.nvim')
-endif " }}}
-
 " Check dein {{{
 if dein#check_install()
     call dein#install()

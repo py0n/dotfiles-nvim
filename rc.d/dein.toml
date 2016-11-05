@@ -95,6 +95,15 @@ hook_post_source = '''
 '''
 # }}}
 
+# deoplete {{{
+# https://github.com/Shougo/deoplete.nvim
+[[plugins]]
+repo     = 'Shougo/deoplete.nvim'
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+'''
+# }}}
+
 # deoplete-go {{{
 # https://github.com/zchee/deoplete-go
 [[plugins]]
