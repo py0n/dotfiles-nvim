@@ -92,6 +92,12 @@ hook_post_source = '''
         call denite#custom#var('grep', 'recursive_opts', [])
     endif
     " }}}
+
+    " mapping {{{
+    " Change mappings.
+    call denite#custom#map('insert', '<C-n>', 'move_to_next_line')
+    call denite#custom#map('insert', '<C-p>', 'move_to_prev_line')
+    " }}}
 '''
 # }}}
 
