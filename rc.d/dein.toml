@@ -301,9 +301,7 @@ on_cmd = ['Linediff', 'LinediffReset']
 
 # neomru {{{
 [[plugins]]
-repo      = 'Shougo/neomru.vim'
-lazy      = 1
-on_source = ['denite.nvim']
+repo = 'Shougo/neomru.vim'
 # }}}
 
 # syntastic {{{
