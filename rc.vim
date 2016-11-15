@@ -40,7 +40,6 @@ call s:source_rc('encoding.vim')
 call s:source_rc('dein.vim')
 " }}}
 
-
 " Colorscheme & Syntax highlight {{{
 call s:source_rc('colorscheme.vim')
 " }}}
