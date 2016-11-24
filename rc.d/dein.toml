@@ -45,7 +45,6 @@ repo = 'Shougo/dein.vim'
 # denite.nvim {{{
 [[plugins]]
 repo     = 'Shougo/denite.nvim'
-on_cmd   = ['Denite']
 hook_add = '''
     nnoremap <C-p> :<C-u>Denite file_mru<CR>
     nnoremap <C-n> :<C-u>Denite file_rec<CR>
@@ -55,10 +54,10 @@ hook_add = '''
 
     nnoremap <silent> [denite]g :<C-u>Denite grep<CR>
     nnoremap <silent> [denite]o :<C-u>Denite line<CR>
-'''
-hook_post_source = '''
+
     " file_mru source {{{
     call denite#custom#source('file_mru', 'matchers', [
+     \  'matcher_fuzzy',
      \  'matcher_project_files'
      \  ])
     " }}}
