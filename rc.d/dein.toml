@@ -46,8 +46,8 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo     = 'Shougo/denite.nvim'
 hook_add = '''
-    nnoremap <C-p> :<C-u>Denite file_mru<CR>
-    nnoremap <C-n> :<C-u>Denite file_rec<CR>
+    nnoremap <silent> <C-p> :<C-u>Denite file_mru<CR>
+    nnoremap <silent> <C-n> :<C-u>Denite `finddir('.git',';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 
     nnoremap [denite] <Nop>
     nmap     <Space>u [denite]
@@ -62,18 +62,15 @@ hook_add = '''
      \  ])
     " }}}
 
-    " file_rec source {{{
-    if executable('pt')
-        call denite#custom#var('file_rec', 'command', [
-         \  'pt',
-         \  '-g', '',
-         \  '--hidden',
-         \  '--ignore', '.git',
-         \  '--nocolor',
-         \  '--nogroup'
-         \  ])
-        call denite#custom#source('file_rec', 'matchers', [
-         \  'matcher_fuzzy'
+    " file_rec/git source {{{
+    if executable('git')
+        call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+        call denite#custom#var('file_rec/git', 'command', [
+         \  'git',
+         \  'ls-files',
+         \  '--cached',
+         \  '--exclude-standard',
+         \  '--others'
          \  ])
     endif
     " }}}
