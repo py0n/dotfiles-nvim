@@ -11,7 +11,7 @@ let s:dein_toml      = $MYVIMRCDIR . '/dein.toml'
 let s:dein_lazy_toml = $MYVIMRCDIR . '/dein_lazy.toml'
 
 if dein#load_state($MYDEINCACHEDIR)
-    call dein#begin($MYDEINCACHEDIR, [s:dein_toml])
+    call dein#begin($MYDEINCACHEDIR)
     call dein#load_toml(s:dein_toml)
     call dein#end()
     call dein#save_state()
