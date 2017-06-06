@@ -6,8 +6,10 @@ colorscheme solarized
 
 " ノーマルモードで行を目立たせる {{{
 " http://blog.remora.cx/2012/10/spotlight-cursor-line.html
+highlight clear CursorColumn
 highlight clear CursorLine
-highlight CursorLine ctermbg=magenta ctermfg=lightgray cterm=NONE term=reverse
+highlight CursorColumn ctermbg=magenta ctermfg=lightgray cterm=NONE term=reverse
+highlight CursorLine   ctermbg=magenta ctermfg=lightgray cterm=NONE term=reverse
 autocmd MyAugroup BufLeave,InsertEnter * setlocal nocursorline
 autocmd MyAugroup BufEnter,InsertLeave * setlocal cursorline
 " }}}

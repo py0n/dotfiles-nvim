@@ -7,6 +7,7 @@ set breakindent
 set cindent
 set cmdheight=1
 set confirm
+set cursorcolumn
 set cursorline
 set expandtab                  " タブを空白に展開
 set hidden
