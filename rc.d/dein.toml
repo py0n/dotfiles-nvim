@@ -137,13 +137,14 @@ hook_add = '''
 
 # lightline.vim {{{
 # https://github.com/itchyny/lightline.vim
+# https://github.com/retorillo/powercord
 [[plugins]]
 repo     = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {
      \  'colorscheme'  : 'solarized',
-     \  'separator'    : {'left': '', 'right': ''},
-     \  'subseparator' : {'left': '', 'right': ''},
+     \  'separator'    : {'left': "\u2b80", 'right': "\u2b82"},
+     \  'subseparator' : {'left': "\u2b81", 'right': "\u2b83"},
      \  'active'       : {
      \      'left' : [
      \          ['mode'],
