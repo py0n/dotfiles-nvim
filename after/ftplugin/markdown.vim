@@ -9,6 +9,9 @@ set cpo-=C
 " 禁則処理關係。
 setlocal display=lastline
 setlocal linebreak
+setlocal shiftwidth=4
+setlocal softtabstop=4
+setlocal tabstop=4
 setlocal textwidth=0
 
 let b:undo_ftplugin = 'setlocal display< linebreak< textwidth<'
