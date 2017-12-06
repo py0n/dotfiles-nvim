@@ -62,6 +62,17 @@ hook_add = '''
      \  ])
     " }}}
 
+    " grep source {{{
+    if executable('pt')
+        call denite#custom#var('grep', 'command', ['pt'])
+        call denite#custom#var('grep', 'default_opts', ['--hidden','--nocolor','--nogroup','--smart-case'])
+        call denite#custom#var('grep', 'recursive_opts', [])
+        call denite#custom#var('grep', 'pattern_opts', ['--regexp'])
+        call denite#custom#var('grep', 'separator', ['--'])
+        call denite#custom#var('grep', 'final_opts', [])
+    endif
+    " }}}
+
     " file_rec/git source {{{
     if executable('git')
         call denite#custom#alias('source', 'file_rec/git', 'file_rec')
@@ -72,20 +83,6 @@ hook_add = '''
          \  '--exclude-standard',
          \  '--others'
          \  ])
-    endif
-    " }}}
-
-    " grep source {{{
-    if executable('pt')
-        call denite#custom#var('grep', 'command', [
-         \  'pt',
-         \  '--hidden',
-         \  '--nocolor',
-         \  '--nogroup',
-         \  '--smart-case'
-         \  ])
-        call denite#custom#var('grep', 'default_opts', [])
-        call denite#custom#var('grep', 'recursive_opts', [])
     endif
     " }}}
 
