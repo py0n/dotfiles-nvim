@@ -52,8 +52,9 @@ hook_add = '''
     nnoremap [denite] <Nop>
     nmap     <Space>u [denite]
 
-    nnoremap <silent> [denite]g :<C-u>Denite grep<CR>
-    nnoremap <silent> [denite]o :<C-u>Denite line<CR>
+    nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+    nnoremap <silent> [denite]o :<C-u>Denite line -buffer-name=search-buffer-denite<CR>
+    nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
 
     " file_mru source {{{
     call denite#custom#source('file_mru', 'matchers', [
