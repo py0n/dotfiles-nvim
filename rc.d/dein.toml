@@ -52,9 +52,16 @@ hook_add = '''
     nnoremap [denite] <Nop>
     nmap     <Space>u [denite]
 
+    " https://qiita.com/pocari/items/1b76c211d5555fa87834
+    " ファイル検索
     nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+    " ファイル内検索
     nnoremap <silent> [denite]o :<C-u>Denite line -buffer-name=search-buffer-denite<CR>
+    " 検索をresume
     nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+    " resumeした検索の前後に移動
+    nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
+    nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
 
     " file_mru source {{{
     call denite#custom#source('file_mru', 'matchers', [
