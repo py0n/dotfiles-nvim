@@ -8,6 +8,7 @@ colorscheme solarized
 " http://blog.remora.cx/2012/10/spotlight-cursor-line.html
 highlight clear CursorColumn
 highlight clear CursorLine
+highlight Comment      ctermfg=gray
 highlight CursorColumn ctermbg=darkgray ctermfg=lightgray cterm=NONE term=reverse
 highlight CursorLine   ctermbg=darkgray ctermfg=lightgray cterm=NONE term=reverse
 autocmd MyAugroup BufEnter,InsertLeave * setlocal cursorcolumn
