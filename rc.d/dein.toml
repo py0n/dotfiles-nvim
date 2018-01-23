@@ -463,7 +463,7 @@ hook_source = '''
 # https://github.com/lambdalisue/vim-gista
 [[plugins]]
 repo             = 'tpope/vim-fugitive'
-on_cmd           = ['Gblame', 'Gcommit', 'Gdiff', 'Gstatus', 'Gwrite', 'Gvdiff']
+on_cmd           = ['Gblame', 'Gcommit', 'Gdiff', 'Git', 'Git!', 'Gstatus', 'Gwrite', 'Gvdiff']
 on_func          = ['fugitive#head']
 hook_post_source = '''
     " http://lambdalisue.hatenablog.com/entry/2014/07/01/203015
