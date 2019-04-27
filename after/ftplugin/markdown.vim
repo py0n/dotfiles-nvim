@@ -7,6 +7,7 @@ let s:cpo_save = &cpo
 set cpo-=C
 
 " 禁則処理關係。
+setlocal ambiwidth=single
 setlocal display=lastline
 setlocal linebreak
 setlocal shiftwidth=4
