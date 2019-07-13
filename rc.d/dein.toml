@@ -602,6 +602,11 @@ repo = 'Shougo/vimproc'
   unix    = 'gmake'
 # }}}
 
+# vim-toml {{{
+[[plugins]]
+repo = 'cespare/vim-toml'
+# }}}
+
 # wildfire.vim {{{
 # https://github.com/gcmt/wildfire.vim
 #[[plugins]]
