@@ -126,35 +126,6 @@ hook_add = '''
 '''
 # }}}
 
-# deoplete-go {{{
-# https://github.com/zchee/deoplete-go
-[[plugins]]
-repo  = 'zchee/deoplete-go'
-on_ft = ['go']
-
-  [plugins.build]
-  linux = 'make'
-  unix  = 'gmake'
-# }}}
-
-# ghcmod-vim {{{
-# https://github.com/eagletmt/ghcmod-vim
-[[plugins]]
-repo    = 'eagletmt/ghcmod-vim'
-depends = ['vimproc']
-on_ft   = ['haskell']
-hook_add = '''
-    " `:execute` を使はないと `E488: Trailing characters` が出る
-    " http://stackoverflow.com/questions/9148579/vim-autocmd-e488-trailing-characters
-    autocmd MyAugroup BufWritePost  *.hs :execute "GhcModCheckAndLintAsync"
-    autocmd MyAugroup FileWritePost *.hs :execute "GhcModCheckAndLintAsync"
-
-    " i:inspect, l:lint
-    autocmd MyAugroup FileType haskell nnoremap <buffer> [haskell]i :GhcModTypeClear<CR>:GhcModType<CR>
-    autocmd MyAugroup FileType haskell nnoremap <buffer> [haskell]l :GhcModCheckAndLint<CR>
-'''
-# }}}
-
 # lightline.vim {{{
 # https://github.com/itchyny/lightline.vim
 # https://github.com/retorillo/powercord
