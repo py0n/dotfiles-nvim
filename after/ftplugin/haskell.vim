@@ -14,6 +14,7 @@ if (executable('stack'))
     nnoremap <buffer> [haskell]t :!stack test<CR>
 endif
 
+setlocal expandtab
 setlocal nosmartindent
 setlocal shiftwidth=2
 setlocal softtabstop=2
