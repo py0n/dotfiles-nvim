@@ -59,7 +59,7 @@ repo = 'Shougo/dein.vim'
 # denite.nvim {{{
 [[plugins]]
 repo     = 'Shougo/denite.nvim'
-hook_add = 'source ~/.config/nvim/rc.d/dein/denite.vim'
+hook_add = 'call deinhook#denite#config()'
 # }}}
 
 ## deoplete {{{
