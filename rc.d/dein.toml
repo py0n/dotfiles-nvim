@@ -169,15 +169,8 @@ host_post_update = 'call deinhook#vimproc#hookpostupdate()'
 repo = 'cespare/vim-toml'
 # }}}
 
-# wildfire.vim {{{
-# https://github.com/gcmt/wildfire.vim
 #[[plugins]]
 #repo        = 'gcmt/wildfire.vim'
-#hook_source = '''
-#    " http://hail2u.net/blog/software/vim-wildfire.html
-#    " http://m.designbits.jp/14030411/
-#    let g:wildfire_objects = ["i'", 'i"', 'i)', 'i]', 'i}', 'ip', 'it', 'i>']
-#'''
-# }}}
+#hook_source = 'call deinhook#wildfire#hookadd()'
 
 # vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
