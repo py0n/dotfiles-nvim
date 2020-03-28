@@ -134,16 +134,10 @@ if       = 0
 on_ft    = ['go']
 hook_add = 'call deinhook#vim_go_extra#hookadd()'
 
-# vim-localrc {{{
-# https://github.com/thinca/vim-localrc
-# http://d.hatena.ne.jp/thinca/20110108/1294427418
 [[plugins]]
 repo     = 'thinca/vim-localrc'
 if       = '!has("win32unix")'
-hook_add = '''
-    let g:localrc_filename = '.local.vim'
-'''
-# }}}
+hook_add = 'call deinhook#vim_localrc#hookadd()'
 
 # vim-markdown {{{
 # https://github.com/plasticboy/vim-markdown
