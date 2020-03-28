@@ -88,19 +88,9 @@ repo     = 'osyo-manga/vim-anzu'
 on_map   = ['<Plug>(anzu-']
 hook_add = 'call deinhook#vim_anzu#hookadd()'
 
-# vim-colors-solarized {{{
-# https://github.com/altercation/vim-colors-solarized
 [[plugins]]
 repo     = 'altercation/vim-colors-solarized'
-hook_add = '''
-    " http://ethanschoonover.com/solarized
-    let g:solarized_hitrail    = 1
-    let g:solarized_termcolors = 256
-    let g:solarized_termtrans  = 1
-    let g:solarized_visibility = "high"
-    set background=dark
-'''
-# }}}
+hook_add = 'call deinhook#vim_colors_solarized#hookadd()'
 
 # vim-easymotion {{{
 # https://github.com/easymotion/vim-easymotion
