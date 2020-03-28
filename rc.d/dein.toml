@@ -151,16 +151,9 @@ depends  = ['context_filetype.vim']
 on_ft    = ['html', 'toml']
 hook_add = 'call deinhook#vim_precious#hookadd()'
 
-# vim-rooter {{{
-# https://github.com/airblade/vim-rooter
-# 自動で `project root` に `lcd`
 [[plugins]]
 repo        = 'airblade/vim-rooter'
-hook_source = '''
-    let g:rooter_silent_chdir = 1
-    let g:rooter_use_lcd      = 1
-'''
-# }}}
+hook_source = 'call deinhook#vim_rooter#hookadd()'
 
 # vim-surround {{{
 [[plugins]]
