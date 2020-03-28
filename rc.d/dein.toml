@@ -127,18 +127,12 @@ repo     = 'fatih/vim-go'
 on_ft    = ['go']
 hook_add = 'call deinhook#vim_go#hookadd()'
 
-# vim-go-extra {{{
-# https://github.com/vim-jp/vim-go-extra
 [[plugins]]
 repo     = 'vim-jp/vim-go-extra'
 depends  = ['vimproc']
 if       = 0
 on_ft    = ['go']
-hook_add = '''
-    let g:gofmt_command = 'goimports'
-    autocmd MyAugroup BufWritePre *.go Fmt
-'''
-# }}}
+hook_add = 'call deinhook#vim_go_extra#hookadd()'
 
 # vim-localrc {{{
 # https://github.com/thinca/vim-localrc
