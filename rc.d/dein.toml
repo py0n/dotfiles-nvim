@@ -122,18 +122,10 @@ on_func          = ['GitGutterGetHunkSummary']
 hook_add         = 'call deinhook#vim_gitgutter#hookadd()'
 hook_post_source = 'call deinhook#vim_gitgutter#hookpostsource()'
 
-# vim-go {{{
-# https://github.com/fatih/vim-go
 [[plugins]]
 repo     = 'fatih/vim-go'
 on_ft    = ['go']
-hook_add = '''
-    let g:go_fmt_command = 'goimports'
-    autocmd MyAugroup Filetype go nnoremap <buffer> [go]f :GoFmt
-    autocmd MyAugroup Filetype go nnoremap <buffer> [go]l :GoLint
-    autocmd MyAugroup Filetype go nnoremap <buffer> [go]t :GoTest
-'''
-# }}}
+hook_add = 'call deinhook#vim_go#hookadd()'
 
 # vim-go-extra {{{
 # https://github.com/vim-jp/vim-go-extra
