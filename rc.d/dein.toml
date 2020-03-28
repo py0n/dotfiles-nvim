@@ -109,25 +109,11 @@ hook_post_source = '''
 '''
 # }}}
 
-# vim-gista {{{
-# https://github.com/lambdalisue/vim-gista
 [[plugins]]
-repo     = 'lambdalisue/vim-gista'
-on_cmd   = ['Gista']
-pre_func = ['gista#']
-hook_source = '''
-    " http://lambdalisue.hatenablog.com/entry/2014/07/01/203015
-    if exists('g:gista#client#apinames')
-        for k in keys(g:gista#client#apinames)
-            " 以下の変数は `$HOME/.local.vim` で定義する
-            " g:gista#client#apinames (非標準の配列変数)
-            " g:gista#client#default_apiname
-            " g:gista#client#default_username
-            call gista#client#register(k, g:gista#client#apinames[k])
-        endfor
-    endif
-'''
-# }}}
+repo        = 'lambdalisue/vim-gista'
+on_cmd      = ['Gista']
+pre_func    = ['gista#']
+hook_source = 'call deinhook#vim_gista#hookadd()'
 
 # vim-gitgutter {{{
 # https://github.com/airblade/vim-gitgutter
