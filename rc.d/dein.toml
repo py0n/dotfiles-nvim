@@ -115,25 +115,12 @@ on_cmd      = ['Gista']
 pre_func    = ['gista#']
 hook_source = 'call deinhook#vim_gista#hookadd()'
 
-# vim-gitgutter {{{
-# https://github.com/airblade/vim-gitgutter
 [[plugins]]
-repo    = 'airblade/vim-gitgutter'
-lazy    = 1
-on_func = ['GitGutterGetHunkSummary']
-hook_add = '''
-    let g:gitgutter_sign_added    = '✚'
-    let g:gitgutter_sign_modified = '➜'
-    let g:gitgutter_sign_removed  = '✘'
-'''
-hook_post_source = '''
-    autocmd MyAugroup VimEnter * :GitGutterEnable
-
-    " デフォルトでは以下のキーマップが設定されている。
-    " nmap ]c <Plug>GitGutterNextHunk
-    " nmap [c <Plug>GitGutterPrevHunk
-'''
-# }}}
+repo             = 'airblade/vim-gitgutter'
+lazy             = 1
+on_func          = ['GitGutterGetHunkSummary']
+hook_add         = 'call deinhook#vim_gitgutter#hookadd()'
+hook_post_source = 'call deinhook#vim_gitgutter#hookpostsource()'
 
 # vim-go {{{
 # https://github.com/fatih/vim-go
