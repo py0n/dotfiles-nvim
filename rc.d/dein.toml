@@ -160,18 +160,9 @@ hook_source = 'call deinhook#vim_rooter#hookadd()'
 repo = 'tpope/vim-surround'
 # }}}
 
-# vimproc {{{
 [[plugins]]
-repo = 'Shougo/vimproc'
-host_post_update = '''
-    if executable('gmake')
-        let cmd = 'gmake'
-    else
-        let cmd = 'make'
-    endif
-    let g:dein#plugin.build = cmd
-'''
-# }}}
+repo             = 'Shougo/vimproc'
+host_post_update = 'call deinhook#vimproc#hookpostupdate()'
 
 # vim-toml {{{
 [[plugins]]
