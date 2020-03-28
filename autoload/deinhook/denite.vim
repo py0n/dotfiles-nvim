@@ -1,4 +1,4 @@
-function deinhook#denite#config()
+function deinhook#denite#hookadd()
     nnoremap <silent> <C-p> :<C-u>Denite file_mru<CR>
     nnoremap <silent> <C-n> :<C-u>Denite `finddir('.git',';') != '' ? 'file_rec/git' : 'file/rec'`<CR>
 

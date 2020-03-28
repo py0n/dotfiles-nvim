@@ -16,15 +16,11 @@ repo   = 'cohama/agit.vim'
 on_cmd = ['Agit', 'AgitFile']
 # }}}
 
-# coc.nvim {{{
-# https://github.com/neoclide/coc.nvim
-# http://mee.hatenablog.com/entry/2019/09/28/012939
 [[plugins]]
 repo     = 'neoclide/coc.nvim'
 merge    = 0
 rev      = 'release'
-hook_add = 'source ~/.config/nvim/rc.d/dein/coc.vim'
-# }}}
+hook_add = 'call deinhook#coc#hookadd()'
 
 # context_filetype.vim {{{
 # https://github.com/Shougo/context_filetype.vim
@@ -56,11 +52,9 @@ hook_add = '''
 repo = 'Shougo/dein.vim'
 # }}}
 
-# denite.nvim {{{
 [[plugins]]
 repo     = 'Shougo/denite.nvim'
-hook_add = 'call deinhook#denite#config()'
-# }}}
+hook_add = 'call deinhook#denite#hookadd()'
 
 ## deoplete {{{
 ## https://github.com/Shougo/deoplete.nvim
