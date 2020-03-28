@@ -139,16 +139,11 @@ repo     = 'thinca/vim-localrc'
 if       = '!has("win32unix")'
 hook_add = 'call deinhook#vim_localrc#hookadd()'
 
-# vim-markdown {{{
-# https://github.com/plasticboy/vim-markdown
 [[plugins]]
-repo    = 'plasticboy/vim-markdown'
-depends = ['tabular']
-on_ft   = ['markdown']
-hook_add = '''
-    let g:vim_markdown_folding_level = 2
-'''
-# }}}
+repo     = 'plasticboy/vim-markdown'
+depends  = ['tabular']
+on_ft    = ['markdown']
+hook_add = 'call deinhook#vim_markdown#hookadd()'
 
 # vim-precious {{{
 # https://github.com/osyo-manga/vim-precious
