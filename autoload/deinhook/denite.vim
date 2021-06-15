@@ -18,11 +18,11 @@ function deinhook#denite#hookadd()
 
     " https://qiita.com/pocari/items/1b76c211d5555fa87834
     " ファイル検索
-    nnoremap <silent> [denite]g :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+    nnoremap <silent> [denite]g :<C-u>Denite grep<CR>
     " ファイル内検索
-    nnoremap <silent> [denite]o :<C-u>Denite line -buffer-name=search-buffer-denite<CR>
+    nnoremap <silent> [denite]o :<C-u>Denite line<CR>
     " 検索をresume
-    nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+    nnoremap <silent> [denite]r :<C-u>Denite -resume<CR>
     " resumeした検索の前後に移動
     nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
     nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
@@ -35,13 +35,15 @@ function deinhook#denite#hookadd()
     " }}}
 
     " grep source {{{
-    if executable('pt')
-        call denite#custom#var('grep', 'command', ['pt'])
-        call denite#custom#var('grep', 'default_opts', ['--hidden','--nocolor','--nogroup','--smart-case'])
-        call denite#custom#var('grep', 'recursive_opts', [])
-        call denite#custom#var('grep', 'pattern_opts', ['--regexp'])
-        call denite#custom#var('grep', 'separator', ['--'])
-        call denite#custom#var('grep', 'final_opts', [])
+    if executable('rg')
+        call denite#custom#var('grep', {
+         \  'command': ['rg'],
+         \  'default_opts': ['-i','--vimgrep','--no-heading'],
+         \  'recursive_opts': [],
+         \  'pattern_opts': ['--regexp'],
+         \  'separator': ['--'],
+         \  'final_opts': [],
+         \  })
     endif
     " }}}
 
