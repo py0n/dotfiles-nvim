@@ -10,9 +10,9 @@ set cpo-=C
 setlocal ambiwidth=single
 setlocal display=lastline
 setlocal linebreak
-setlocal shiftwidth=4
-setlocal softtabstop=4
-setlocal tabstop=4
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal tabstop=2
 setlocal textwidth=0
 setlocal foldlevel=100
 
