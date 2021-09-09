@@ -26,6 +26,25 @@ hook_add = 'call deinhook#coc#hookadd()'
 repo     = 'Shougo/context_filetype.vim'
 hook_add = 'call deinhook#context_filetype#hookadd()'
 
+# ddc.vim {{{
+# https://github.com/Shougo/ddc.vim
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+hook_add = 'call deinhook#ddc#hookadd()'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+
+[[plugins]]
+repo = 'Shougo/ddc-nextword'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+# }}}
+
 # dein.vim {{{
 [[plugins]]
 repo = 'Shougo/dein.vim'
@@ -35,14 +54,17 @@ repo = 'Shougo/dein.vim'
 repo     = 'Shougo/denite.nvim'
 hook_add = 'call deinhook#denite#hookadd()'
 
-## deoplete {{{
-## https://github.com/Shougo/deoplete.nvim
-#[[plugins]]
-#repo     = 'Shougo/deoplete.nvim'
-#hook_add = '''
-#    let g:deoplete#enable_at_startup = 1
-#'''
-## }}}
+# denops.vim {{{
+# https://github.com/vim-denops/denops.vim
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+# }}}
+
+# denops-helloworld.vim {{{
+# https://github.com/vim-denops/denops.vim
+[[plugins]]
+repo = 'vim-denops/denops-helloworld.vim'
+# }}}
 
 [[plugins]]
 repo     = 'itchyny/lightline.vim'
@@ -97,11 +119,15 @@ repo        = 'easymotion/vim-easymotion'
 on_map      = ['/', '<Space>h', '<Space>j', '<Space>k', '<Space>l', '<Space>w', 's']
 hook_source = 'call deinhook#vim_easymotion#hookadd()'
 
+[[plugins]]
+repo     = 'junegunn/vim-easy-align'
+on_map   = ['<Plug>EasyAlign']
+
 # vim-fugitive {{{
 # https://github.com/lambdalisue/vim-gista
 [[plugins]]
 repo             = 'tpope/vim-fugitive'
-on_cmd           = ['Gblame', 'Gcommit', 'Gdiff', 'Git', 'Git!', 'Gstatus', 'Gwrite', 'Gvdiff']
+on_cmd           = ['Gdiffsplit', 'Git', 'Git!', 'Gwrite', 'Gvdiffsplit']
 on_func          = ['fugitive#head']
 hook_post_source = '''
     " http://lambdalisue.hatenablog.com/entry/2014/07/01/203015
@@ -122,17 +148,17 @@ on_func          = ['GitGutterGetHunkSummary']
 hook_add         = 'call deinhook#vim_gitgutter#hookadd()'
 hook_post_source = 'call deinhook#vim_gitgutter#hookpostsource()'
 
-[[plugins]]
-repo     = 'fatih/vim-go'
-on_ft    = ['go']
-hook_add = 'call deinhook#vim_go#hookadd()'
-
-[[plugins]]
-repo     = 'vim-jp/vim-go-extra'
-depends  = ['vimproc']
-if       = 0
-on_ft    = ['go']
-hook_add = 'call deinhook#vim_go_extra#hookadd()'
+#[[plugins]]
+#repo     = 'fatih/vim-go'
+#on_ft    = ['go']
+#hook_add = 'call deinhook#vim_go#hookadd()'
+#
+#[[plugins]]
+#repo     = 'vim-jp/vim-go-extra'
+#depends  = ['vimproc']
+#if       = 0
+#on_ft    = ['go']
+#hook_add = 'call deinhook#vim_go_extra#hookadd()'
 
 [[plugins]]
 repo     = 'thinca/vim-localrc'
