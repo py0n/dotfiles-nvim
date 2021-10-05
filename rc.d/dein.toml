@@ -16,11 +16,11 @@ repo   = 'cohama/agit.vim'
 on_cmd = ['Agit', 'AgitFile']
 # }}}
 
-[[plugins]]
-repo     = 'neoclide/coc.nvim'
-merge    = 0
-rev      = 'release'
-hook_add = 'call deinhook#coc#hookadd()'
+#[[plugins]]
+#repo     = 'neoclide/coc.nvim'
+#merge    = 0
+#rev      = 'release'
+#hook_add = 'call deinhook#coc#hookadd()'
 
 [[plugins]]
 repo     = 'Shougo/context_filetype.vim'
@@ -40,6 +40,12 @@ repo = 'Shougo/ddc-matcher_head'
 
 [[plugins]]
 repo = 'Shougo/ddc-nextword'
+
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+
+[[plugins]]
+repo = 'matsui54/ddc-nvim-lsp-doc'
 
 [[plugins]]
 repo = 'Shougo/ddc-sorter_rank'
