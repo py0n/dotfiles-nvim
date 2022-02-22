@@ -36,11 +36,6 @@ call s:source_rc('encoding.vim')
 
 " これより前に日本語のコメント禁止
 
-" python3
-if has('nvim')
-    let g:python3_host_prog = substitute(system('which python3'),"\n","","")
-endif
-
 " Plugins {{{
 call s:source_rc('dein.vim')
 " }}}
