@@ -3,11 +3,11 @@ function deinhook#ddc#hookadd()
     call ddc#custom#patch_filetype(['vim'], {
      \ 'keywordPattern': '[a-zA-Z_][a-zA-Z_0-9:#]*',
      \ })
-    call ddc#custom#patch_global('sources', ['around', 'nextword', 'nvimlsp'])
+    call ddc#custom#patch_global('sources', ['around', 'nextword', 'nvim-lsp'])
     call ddc#custom#patch_global('sourceOptions', {
      \  'around': {'mark': 'A'},
      \  'nextword': {'mark': 'nextword'},
-     \  'nvimlsp': {'mark': 'lsp', 'forceCompletionPattern': '\.|:|->'},
+     \  'nvim-lsp': {'mark': 'lsp', 'forceCompletionPattern': '\.\w*|:\w*|->\w*'},
      \  '_': {'matchers': ['matcher_head'], 'sorters': ['sorter_rank']},
      \  })
     call ddc#enable()
