@@ -64,6 +64,9 @@ repo = 'Shougo/ddu-source-file_rec'
 repo = 'Shougo/ddu-source-line'
 
 [[plugins]]
+repo = 'shun/ddu-source-rg'
+
+[[plugins]]
 repo = 'Shougo/ddu-ui-ff'
 
 [[plugins]]

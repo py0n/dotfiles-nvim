@@ -12,6 +12,11 @@ function deinhook#ddu#hookadd()
     \           'matchers': ['matcher_substring'],
     \       },
     \   },
+    \   'sourceParams': {
+    \       'rg': {
+    \           'args': ['--column', '--no-heading', '--color', 'never'],
+    \       },
+    \   },
     \   'kindOptions': {
     \       'file': {
     \           'defaultAction': 'open',
@@ -42,8 +47,8 @@ function deinhook#ddu#hookadd()
     nnoremap [denite] <Nop>
     nmap     <Space>u [denite]
 
-    " ファイル検索
-    nnoremap <silent> [denite]g <Cmd>call ddu#start({'sources': [{'name':'file_rec', 'params': {}}]})<CR>
+    " ファイル検索(rg)
+    nnoremap <silent> [denite]g :<C-u>DduRg<CR>
     " ファイル内検索
     nnoremap <silent> [denite]o <Cmd>call ddu#start({'sources': [{'name':'line'}]})<CR>
 endfunction
