@@ -7,6 +7,11 @@ augroup MyAugroup
     autocmd!
 augroup END
 
+if !executable('deno')
+    echomsg "Please install deno!"
+    finish
+endif
+
 " Environments {{{
 let $MYVIMRUNTIME = fnamemodify($MYVIMRC, ':p:h')
 let $MYVIMRCDIR   = $MYVIMRUNTIME . '/rc.d'
