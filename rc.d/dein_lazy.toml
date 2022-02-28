@@ -1,12 +1,19 @@
 # 遅延読み込み用のdein.toml
 
-# ddc.vim {{{
-# https://github.com/Shougo/ddc.vim
+# Shougo/ddc.vim
+#
+#     https://github.com/Shougo/ddc.vim
+#
+# ddc.vimとBuiltin LSPでサブ武器を錬成した
+#
+#     https://riq0h.jp/2021/09/15/084023/
+#
+
 [[plugins]]
 repo        = 'Shougo/ddc.vim'
 depends     = ['denops.vim']
 on_event    = 'InsertEnter'
-hook_source = 'call deinhook#ddc#hookadd()'
+hook_source = 'call deinhook#ddc#hooksource()'
 
 [[plugins]]
 repo      = 'Shougo/ddc-around'
@@ -31,7 +38,6 @@ on_source = 'ddc.vim'
 [[plugins]]
 repo      = 'Shougo/ddc-sorter_rank'
 on_source = 'ddc.vim'
-# }}}
 
 [[plugins]]
 repo     = 'hrsh7th/vim-vsnip'
@@ -53,7 +59,6 @@ repo = 'hrsh7th/vim-vsnip-integ'
 [[plugins]]
 repo = 'rafamadriz/friendly-snippets'
 
-# LSP関連 {{{
 [[plugins]]
 repo        = 'neovim/nvim-lspconfig'
 on_event    = 'BufEnter'
@@ -88,7 +93,6 @@ EOF
 [[plugins]]
 repo      = 'williamboman/nvim-lsp-installer'
 on_source = 'nvim-lspconfig'
-# }}}
 
 [[plugins]]
 repo        = 'matsui54/denops-signature_help'

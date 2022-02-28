@@ -1,5 +1,11 @@
-" https://zenn.dev/shougo/articles/ddc-vim-beta
-function deinhook#ddc#hookadd()
+" 新世代の自動補完プラグイン ddc.vim
+"
+"     https://zenn.dev/shougo/articles/ddc-vim-beta
+"
+" dein.vim:tomlファイルでプラグイン管理する
+"
+"     https://leico.github.io/TechnicalNote/VimR/VimR-dein-toml
+function deinhook#ddc#hooksource()
     call ddc#custom#patch_filetype(['vim'], {
     \   'keywordPattern': '[a-zA-Z_][a-zA-Z_0-9:#]*',
     \   })
