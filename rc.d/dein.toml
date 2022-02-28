@@ -26,28 +26,6 @@ on_cmd = ['Agit', 'AgitFile']
 repo     = 'Shougo/context_filetype.vim'
 hook_add = 'call deinhook#context_filetype#hookadd()'
 
-# ddc.vim {{{
-# https://github.com/Shougo/ddc.vim
-[[plugins]]
-repo = 'Shougo/ddc.vim'
-hook_add = 'call deinhook#ddc#hookadd()'
-
-[[plugins]]
-repo = 'Shougo/ddc-around'
-
-[[plugins]]
-repo = 'Shougo/ddc-matcher_head'
-
-[[plugins]]
-repo = 'Shougo/ddc-nextword'
-
-[[plugins]]
-repo = 'Shougo/ddc-nvim-lsp'
-
-[[plugins]]
-repo = 'Shougo/ddc-sorter_rank'
-# }}}
-
 # ddu.vim {{{
 # https://github.com/Shougo/ddu.vim
 [[plugins]]
