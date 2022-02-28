@@ -16,12 +16,6 @@ repo   = 'cohama/agit.vim'
 on_cmd = ['Agit', 'AgitFile']
 # }}}
 
-#[[plugins]]
-#repo     = 'neoclide/coc.nvim'
-#merge    = 0
-#rev      = 'release'
-#hook_add = 'call deinhook#coc#hookadd()'
-
 [[plugins]]
 repo     = 'Shougo/context_filetype.vim'
 hook_add = 'call deinhook#context_filetype#hookadd()'
