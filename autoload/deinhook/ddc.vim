@@ -7,6 +7,7 @@ function deinhook#ddc#hookadd()
     \   'around',
     \   'nextword',
     \   'nvim-lsp',
+    \   'vsnip',
     \   ])
     call ddc#custom#patch_global('sourceOptions', {
     \   'around': {
