@@ -45,12 +45,11 @@ repo = 'Shougo/ddc-nextword'
 repo = 'Shougo/ddc-nvim-lsp'
 
 [[plugins]]
-repo = 'matsui54/ddc-nvim-lsp-doc'
-
-[[plugins]]
 repo = 'Shougo/ddc-sorter_rank'
 # }}}
 
+# ddu.vim {{{
+# https://github.com/Shougo/ddu.vim
 [[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'
 
@@ -72,6 +71,7 @@ repo = 'Shougo/ddu-ui-ff'
 [[plugins]]
 repo     = 'Shougo/ddu.vim'
 hook_add = 'call deinhook#ddu#hookadd()'
+# }}}
 
 # dein.vim {{{
 [[plugins]]

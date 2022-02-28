@@ -11,5 +11,4 @@ function deinhook#ddc#hookadd()
      \  '_': {'matchers': ['matcher_head'], 'sorters': ['sorter_rank']},
      \  })
     call ddc#enable()
-    call ddc_nvim_lsp_doc#enable()
 endfunction
