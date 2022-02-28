@@ -105,11 +105,6 @@ repo   = 'AndrewRadev/linediff.vim'
 on_cmd = ['Linediff', 'LinediffReset']
 # }}}
 
-# neomru {{{
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-# }}}
-
 [[plugins]]
 repo             = 'scrooloose/syntastic'
 lazy             = 1
