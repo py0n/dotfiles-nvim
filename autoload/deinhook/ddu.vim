@@ -2,31 +2,44 @@
 " https://zenn.dev/shougo/articles/ddu-vim-beta
 function deinhook#ddu#hookadd()
     call ddu#custom#patch_global({
-    \   'ui': 'ff',
     \   'sources': [
     \       {'name': 'file_rec', 'params': {}},
     \       {'name': 'line'},
     \   ],
+    \ })
+
+    call ddu#custom#patch_global({
     \   'sourceOptions': {
     \       '_': {
     \           'matchers': ['matcher_substring'],
     \       },
     \   },
+    \ })
+
+    call ddu#custom#patch_global({
     \   'sourceParams': {
     \       'rg': {
     \           'args': ['--column', '--no-heading', '--color', 'never'],
     \       },
     \   },
+    \ })
+
+    call ddu#custom#patch_global({
     \   'kindOptions': {
     \       'file': {
     \           'defaultAction': 'open',
     \       },
     \   },
+    \ })
+
+    call ddu#custom#patch_global({
+    \   'ui': 'ff',
     \   'uiParams': {
     \       'ff': {
-    \           'split': 'floating',
+    \           'split': 'horizontal',
+    \           'startFilter': v:true,
     \       },
-    \   }
+    \   },
     \ })
 
     autocmd FileType ddu-ff call s:ddu_my_settings()
