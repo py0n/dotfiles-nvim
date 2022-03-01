@@ -7,13 +7,10 @@ endif
 
 execute 'set runtimepath^=' . substitute(fnamemodify(s:dein_dir, ':p'), '/$', '', '')
 
-let s:dein_toml      = $MYVIMRCDIR . '/dein.toml'
-let s:dein_lazy_toml = $MYVIMRCDIR . '/dein_lazy.toml'
-
 if dein#load_state($MYDEINCACHEDIR)
     call dein#begin($MYDEINCACHEDIR)
-    call dein#load_toml(s:dein_toml)
-    call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
+    call dein#load_toml($MYVIMRCDIR . '/dein.toml')
+    call dein#load_toml($MYVIMRCDIR . '/dein.ddc.toml', {'lazy': 1})
     call dein#end()
     call dein#save_state()
 endif

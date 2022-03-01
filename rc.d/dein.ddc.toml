@@ -1,4 +1,4 @@
-# 遅延読み込み用のdein.toml
+# ddc.vim遅延読み込み用のdein.toml
 
 # Shougo/ddc.vim
 #
@@ -7,13 +7,15 @@
 # ddc.vimとBuiltin LSPでサブ武器を錬成した
 #
 #     https://riq0h.jp/2021/09/15/084023/
-#
 
+# ddc.vim {{{
 [[plugins]]
 repo        = 'Shougo/ddc.vim'
 depends     = ['denops.vim']
 on_event    = 'InsertEnter'
-hook_source = 'call deinhook#ddc#hooksource()'
+hook_source = '''
+call deinhook#ddc#hooksource()
+'''
 
 [[plugins]]
 repo      = 'Shougo/ddc-around'
@@ -38,27 +40,9 @@ on_source = 'ddc.vim'
 [[plugins]]
 repo      = 'Shougo/ddc-sorter_rank'
 on_source = 'ddc.vim'
+# }}}
 
-[[plugins]]
-repo     = 'hrsh7th/vim-vsnip'
-on_event = 'InsertEnter'
-depends  = ['vim-vsnip-integ', 'friendly-snippets']
-hook_add = '''
-imap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
-smap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
-imap <expr> <C-f> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-f>'
-smap <expr> <C-f> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-f>'
-imap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
-smap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
-let g:vsnip_filetypes = {}
-'''
-
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip-integ'
-
-[[plugins]]
-repo = 'rafamadriz/friendly-snippets'
-
+# nvim-lsconfig {{{
 [[plugins]]
 repo        = 'neovim/nvim-lspconfig'
 on_event    = 'BufEnter'
@@ -107,3 +91,28 @@ on_source   = 'ddc.vim'
 hook_source = '''
 call popup_preview#enable()
 '''
+# }}}
+
+# vim-vsnip {{{
+[[plugins]]
+repo     = 'hrsh7th/vim-vsnip'
+on_event = 'InsertEnter'
+depends  = ['vim-vsnip-integ', 'friendly-snippets']
+hook_add = '''
+imap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
+smap <expr> <C-j> vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-j>'
+imap <expr> <C-f> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-f>'
+smap <expr> <C-f> vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-f>'
+imap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
+smap <expr> <C-b> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<C-b>'
+let g:vsnip_filetypes = {}
+'''
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+
+[[plugins]]
+repo = 'rafamadriz/friendly-snippets'
+# }}}
+
+# vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
