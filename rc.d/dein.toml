@@ -29,10 +29,16 @@ repo = 'Shougo/ddu-filter-matcher_substring'
 repo = 'Shougo/ddu-kind-file'
 
 [[plugins]]
+repo = 'Shougo/ddu-kind-word'
+
+[[plugins]]
 repo = 'Shougo/ddu-source-file_rec'
 
 [[plugins]]
 repo = 'Shougo/ddu-source-line'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-register'
 
 [[plugins]]
 repo = 'shun/ddu-source-rg'

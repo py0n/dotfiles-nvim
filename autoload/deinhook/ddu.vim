@@ -5,6 +5,7 @@ function deinhook#ddu#hookadd()
     \   'sources': [
     \       {'name': 'file_rec', 'params': {}},
     \       {'name': 'line'},
+    \       {'name': 'register'},
     \   ],
     \ })
 
@@ -29,6 +30,9 @@ function deinhook#ddu#hookadd()
     \       'file': {
     \           'defaultAction': 'open',
     \       },
+    \       'word': {
+    \           'defaultAction': 'append',
+    \       },
     \   },
     \ })
 
@@ -37,7 +41,6 @@ function deinhook#ddu#hookadd()
     \   'uiParams': {
     \       'ff': {
     \           'split': 'horizontal',
-    \           'startFilter': v:true,
     \       },
     \   },
     \ })
@@ -64,4 +67,6 @@ function deinhook#ddu#hookadd()
     nnoremap <silent> [denite]g :<C-u>DduRg<CR>
     " ファイル内検索
     nnoremap <silent> [denite]o <Cmd>call ddu#start({'sources': [{'name':'line'}]})<CR>
+    " レジスタ(マーク)検索
+    nnoremap <silent> [denite]m <Cmd>call ddu#start({'sources': [{'name':'register'}]})<CR>
 endfunction
