@@ -175,8 +175,8 @@ on_ft    = ['html', 'toml']
 hook_add = 'call deinhook#vim_precious#hookadd()'
 
 [[plugins]]
-repo        = 'airblade/vim-rooter'
-hook_source = 'call deinhook#vim_rooter#hookadd()'
+repo     = 'airblade/vim-rooter'
+hook_add = 'call deinhook#vim_rooter#hookadd()'
 
 # vim-surround {{{
 [[plugins]]
