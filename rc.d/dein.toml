@@ -115,15 +115,8 @@ repo     = 'junegunn/vim-easy-align'
 on_map   = ['<Plug>EasyAlign']
 
 # vim-fugitive {{{
-# https://github.com/lambdalisue/vim-gista
 [[plugins]]
-repo             = 'tpope/vim-fugitive'
-on_cmd           = ['Gdiffsplit', 'Git', 'Git!', 'Gwrite', 'Gvdiffsplit']
-on_func          = ['fugitive#head']
-hook_post_source = '''
-    " http://lambdalisue.hatenablog.com/entry/2014/07/01/203015
-    doautoall fugitive BufNewFile
-'''
+repo = 'tpope/vim-fugitive'
 # }}}
 
 [[plugins]]
