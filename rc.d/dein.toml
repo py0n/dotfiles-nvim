@@ -145,18 +145,6 @@ on_func          = ['GitGutterGetHunkSummary']
 hook_add         = 'call deinhook#vim_gitgutter#hookadd()'
 hook_post_source = 'call deinhook#vim_gitgutter#hookpostsource()'
 
-#[[plugins]]
-#repo     = 'fatih/vim-go'
-#on_ft    = ['go']
-#hook_add = 'call deinhook#vim_go#hookadd()'
-#
-#[[plugins]]
-#repo     = 'vim-jp/vim-go-extra'
-#depends  = ['vimproc']
-#if       = 0
-#on_ft    = ['go']
-#hook_add = 'call deinhook#vim_go_extra#hookadd()'
-
 [[plugins]]
 repo     = 'thinca/vim-localrc'
 if       = '!has("win32unix")'
