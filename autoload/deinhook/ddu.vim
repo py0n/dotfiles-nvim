@@ -5,6 +5,7 @@ function deinhook#ddu#hookadd()
     \   'sources': [
     \       {'name': 'file_rec', 'params': {}},
     \       {'name': 'line'},
+    \       {'name': 'mr'},
     \       {'name': 'register'},
     \   ],
     \ })
@@ -69,4 +70,6 @@ function deinhook#ddu#hookadd()
     nnoremap <silent> [denite]o <Cmd>call ddu#start({'sources': [{'name':'line'}]})<CR>
     " レジスタ(マーク)検索
     nnoremap <silent> [denite]m <Cmd>call ddu#start({'sources': [{'name':'register'}]})<CR>
+    " 最近使用したファイル
+    nnoremap <silent> [denite]p <Cmd>call ddu#start({'sources': [{'name':'mr'}]})<CR>
 endfunction

@@ -38,6 +38,9 @@ repo = 'Shougo/ddu-source-file_rec'
 repo = 'Shougo/ddu-source-line'
 
 [[plugins]]
+repo = 'kuuote/ddu-source-mr'
+
+[[plugins]]
 repo = 'Shougo/ddu-source-register'
 
 [[plugins]]
@@ -45,6 +48,9 @@ repo = 'shun/ddu-source-rg'
 
 [[plugins]]
 repo = 'Shougo/ddu-ui-ff'
+
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
 
 [[plugins]]
 repo     = 'Shougo/ddu.vim'
