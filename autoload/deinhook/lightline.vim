@@ -11,13 +11,10 @@ function deinhook#lightline#hookadd()
      \          ['fugitive', 'gitgutter', 'filename', 'anzu']
      \      ],
      \      'right': [
-     \          ['syntastic', 'lineinfo'],
+     \          ['lineinfo'],
      \          ['percent'],
      \          ['charcode', 'fileformat', 'fileencoding', 'filetype']
      \      ]
-     \  },
-     \  'component_expand': {
-     \      'syntastic': 'SyntasticStatuslineFlag'
      \  },
      \  'component_function': {
      \      'anzu'         : 'MyAnzu',
@@ -32,7 +29,6 @@ function deinhook#lightline#hookadd()
      \      'mode'         : 'MyMode',
      \      'percent'      : 'MyPercent'
      \  },
-     \  'component_type': {'syntastic': 'error'}
      \  }
     function! MyAnzu() " {{{
         if dein#check_install(['vim-anzu'])
