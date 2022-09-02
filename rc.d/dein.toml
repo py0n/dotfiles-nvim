@@ -97,11 +97,6 @@ on_source = ['vim-markdown']
 # }}}
 
 [[plugins]]
-repo     = 'h1mesuke/vim-alignta'
-on_cmd   = ['Align', 'AlignTsp', 'Alignta']
-hook_add = 'call deinhook#vim_alignta#hookadd()'
-
-[[plugins]]
 repo     = 'osyo-manga/vim-anzu'
 on_map   = ['<Plug>(anzu-']
 hook_add = 'call deinhook#vim_anzu#hookadd()'
