@@ -111,8 +111,9 @@ on_map      = ['/', '<Space>h', '<Space>j', '<Space>k', '<Space>l', '<Space>w', 
 hook_source = 'call deinhook#vim_easymotion#hookadd()'
 
 [[plugins]]
-repo     = 'junegunn/vim-easy-align'
-on_map   = ['<Plug>EasyAlign']
+repo        = 'junegunn/vim-easy-align'
+on_map      = ['gb']
+hook_source = 'call deinhook#vim_easy_align#hookadd()'
 
 # vim-fugitive {{{
 # https://github.com/lambdalisue/vim-gista
