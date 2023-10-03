@@ -16,43 +16,6 @@ repo   = 'cohama/agit.vim'
 on_cmd = ['Agit', 'AgitFile']
 # }}}
 
-# ddu.vim {{{
-# https://github.com/Shougo/ddu.vim
-[[plugins]]
-repo = 'Shougo/ddu-filter-matcher_substring'
-
-[[plugins]]
-repo = 'Shougo/ddu-kind-file'
-
-[[plugins]]
-repo = 'Shougo/ddu-kind-word'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-file_rec'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-line'
-
-[[plugins]]
-repo = 'kuuote/ddu-source-mr'
-
-[[plugins]]
-repo = 'Shougo/ddu-source-register'
-
-[[plugins]]
-repo = 'shun/ddu-source-rg'
-
-[[plugins]]
-repo = 'Shougo/ddu-ui-ff'
-
-[[plugins]]
-repo = 'lambdalisue/mr.vim'
-
-[[plugins]]
-repo     = 'Shougo/ddu.vim'
-hook_add = 'call deinhook#ddu#hookadd()'
-# }}}
-
 # dein.vim {{{
 [[plugins]]
 repo = 'Shougo/dein.vim'

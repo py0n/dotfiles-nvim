@@ -33,10 +33,47 @@ return require('packer').startup(function(use)
     use 'AndrewRadev/linediff.vim'
 
     use 'Shougo/context_filetype.vim'
+    use {
+        'Shougo/ddu-filter-matcher_substring',
+        requires = {'Shougo/ddu.vim'}
+    }
+    use {
+        'Shougo/ddu-kind-file',
+        requires = {'Shougo/ddu.vim'}
+    }
+    use {
+        'Shougo/ddu-kind-word',
+        requires = {'Shougo/ddu.vim'}
+    }
+    use {
+        'Shougo/ddu-source-file_rec',
+        requires = {'Shougo/ddu.vim'}
+    }
+    use {
+        'Shougo/ddu-source-line',
+        requires = {'Shougo/ddu.vim'}
+    }
+    use {
+        'Shougo/ddu-source-register',
+        requires = {'Shougo/ddu.vim'}
+    }
+    use {
+        'Shougo/ddu-ui-ff',
+        requires = {'Shougo/ddu.vim'}
+    }
+    use 'Shougo/ddu.vim'
     use 'airblade/vim-gitgutter'
     use 'altercation/vim-colors-solarized'
     use 'godlygeek/tabular'
     use 'junegunn/vim-easy-align'
+    use {
+        'kuuote/ddu-source-mr',
+        requires = {'Shougo/ddu.vim'}
+    }
+    use {
+        'lambdalisue/mr.vim',
+        requires = {'Shougo/ddu.vim'}
+    }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -51,6 +88,10 @@ return require('packer').startup(function(use)
     use {
         'preservim/vim-markdown',
         requires = {'godlygeek/tabular'}
+    }
+    use {
+        'shun/ddu-source-rg',
+        requires = {'Shougo/ddu.vim'}
     }
     if vim.fn.has('win32unix') ~= 1 then
         use 'thinca/vim-localrc'
