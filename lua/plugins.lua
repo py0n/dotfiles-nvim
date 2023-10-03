@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
     use 'AndrewRadev/linediff.vim'
 
     use 'Shougo/context_filetype.vim'
+    use 'altercation/vim-colors-solarized'
     use 'godlygeek/tabular'
     use 'junegunn/vim-easy-align'
     use {

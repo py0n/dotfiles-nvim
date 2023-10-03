@@ -1,8 +1,12 @@
+vim.cmd([[colorscheme solarized]])
+
 vim.api.nvim_create_augroup('lua/colorscheme', {
     clear = true,
 })
 
 -- ノーマルモードで行を目立たせる
+vim.opt.cursorcolumn = true
+vim.opt.cursorline = true
 vim.api.nvim_set_hl(0, 'Comment', {ctermfg = 7})
 vim.api.nvim_set_hl(0, 'CursorColumn', {
     ctermbg = 240,
