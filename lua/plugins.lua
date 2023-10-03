@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
 
     use 'Shougo/context_filetype.vim'
     use 'godlygeek/tabular'
+    use 'junegunn/vim-easy-align'
     use {
         'notjedi/nvim-rooter.lua',
         config = function() require'nvim-rooter'.setup() end

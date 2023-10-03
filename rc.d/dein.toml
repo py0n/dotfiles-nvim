@@ -67,11 +67,6 @@ repo     = 'osyo-manga/vim-anzu'
 on_map   = ['<Plug>(anzu-']
 hook_add = 'call deinhook#vim_anzu#hookadd()'
 
-[[plugins]]
-repo        = 'junegunn/vim-easy-align'
-on_map      = ['gb']
-hook_source = 'call deinhook#vim_easy_align#hookadd()'
-
 # vim-fugitive {{{
 # https://github.com/lambdalisue/vim-gista
 [[plugins]]
