@@ -157,13 +157,6 @@ depends  = ['context_filetype.vim']
 on_ft    = ['html', 'toml']
 hook_add = 'call deinhook#vim_precious#hookadd()'
 
-[[plugins]]
-repo     = 'airblade/vim-rooter'
-hook_add = '''
-let g:rooter_cd_cmd       = "lcd"
-let g:rooter_silent_chdir = 1
-'''
-
 # vim-surround {{{
 [[plugins]]
 repo = 'tpope/vim-surround'

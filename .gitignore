@@ -2,5 +2,6 @@
 autoload/deoplete/
 doc/deoplete.txt
 plugin/deoplete.vim
+plugin/packer_compiled.lua
 rplugin/python3/deoplete.py
 rplugin/python3/deoplete/
