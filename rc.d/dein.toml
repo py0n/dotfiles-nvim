@@ -147,11 +147,6 @@ depends  = ['tabular']
 on_ft    = ['markdown']
 hook_add = 'call deinhook#vim_markdown#hookadd()'
 
-# vim-surround {{{
-[[plugins]]
-repo = 'tpope/vim-surround'
-# }}}
-
 [[plugins]]
 repo             = 'Shougo/vimproc'
 host_post_update = 'call deinhook#vimproc#hookpostupdate()'

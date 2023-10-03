@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
         config = function() require'nvim-rooter'.setup() end
     }
     use 'osyo-manga/vim-precious'
+    use 'tpope/vim-surround'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
