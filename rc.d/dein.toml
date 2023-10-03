@@ -59,12 +59,6 @@ repo = 'Shougo/dein.vim'
 # }}}
 
 [[plugins]]
-repo        = 'lambdalisue/vim-gista'
-on_cmd      = ['Gista']
-pre_func    = ['gista#']
-hook_source = 'call deinhook#vim_gista#hookadd()'
-
-[[plugins]]
 repo             = 'Shougo/vimproc'
 host_post_update = 'call deinhook#vimproc#hookpostupdate()'
 
