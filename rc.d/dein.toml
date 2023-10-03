@@ -58,18 +58,6 @@ hook_add = 'call deinhook#ddu#hookadd()'
 repo = 'Shougo/dein.vim'
 # }}}
 
-# denops.vim {{{
-# https://github.com/vim-denops/denops.vim
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-# }}}
-
-# denops-helloworld.vim {{{
-# https://github.com/vim-denops/denops.vim
-[[plugins]]
-repo = 'vim-denops/denops-helloworld.vim'
-# }}}
-
 [[plugins]]
 repo     = 'itchyny/lightline.vim'
 hook_add = 'call deinhook#lightline#hookadd()'
