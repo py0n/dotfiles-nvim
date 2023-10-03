@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
     if vim.fn.has('win32unix') ~= 1 then
         use 'thinca/vim-localrc'
     end
+    use 'tpope/vim-fugitive'
     use 'tpope/vim-surround'
     use 'vim-denops/denops-helloworld.vim'
     use 'vim-denops/denops.vim'

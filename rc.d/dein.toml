@@ -58,18 +58,6 @@ hook_add = 'call deinhook#ddu#hookadd()'
 repo = 'Shougo/dein.vim'
 # }}}
 
-# vim-fugitive {{{
-# https://github.com/lambdalisue/vim-gista
-[[plugins]]
-repo             = 'tpope/vim-fugitive'
-on_cmd           = ['Gdiffsplit', 'Git', 'Git!', 'Gwrite', 'Gvdiffsplit']
-on_func          = ['fugitive#head']
-hook_post_source = '''
-    " http://lambdalisue.hatenablog.com/entry/2014/07/01/203015
-    doautoall fugitive BufNewFile
-'''
-# }}}
-
 [[plugins]]
 repo        = 'lambdalisue/vim-gista'
 on_cmd      = ['Gista']
