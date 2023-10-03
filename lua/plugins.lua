@@ -26,6 +26,12 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- My plugins here
+
+    -- Linediff使用法
+    -- 1. 比較したい行をvisual modeで選択して `Linediff` を実行
+    -- 2. 比較対象の行をvisual modeで選択した上で再度 `Linediff` を実行
+    use 'AndrewRadev/linediff.vim'
+
     use 'Shougo/context_filetype.vim'
     use 'godlygeek/tabular'
     use {

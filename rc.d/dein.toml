@@ -74,17 +74,6 @@ repo = 'vim-denops/denops-helloworld.vim'
 repo     = 'itchyny/lightline.vim'
 hook_add = 'call deinhook#lightline#hookadd()'
 
-# linediff.vim {{{
-# https://github.com/AndrewRadev/linediff.vim
-# http://deris.hatenablog.jp/entry/2013/12/15/235606
-# (使用法)
-# 1. 比較したい行をvisual modeで選択して `Linediff` を実行
-# 2. 比較対象の行をvisual modeで選択した上で再度 `Linediff` を実行
-[[plugins]]
-repo   = 'AndrewRadev/linediff.vim'
-on_cmd = ['Linediff', 'LinediffReset']
-# }}}
-
 [[plugins]]
 repo     = 'osyo-manga/vim-anzu'
 on_map   = ['<Plug>(anzu-']
