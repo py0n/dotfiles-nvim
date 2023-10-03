@@ -85,13 +85,6 @@ repo   = 'AndrewRadev/linediff.vim'
 on_cmd = ['Linediff', 'LinediffReset']
 # }}}
 
-# tabular {{{
-# https://github.com/godlygeek/tabular
-[[plugins]]
-repo      = 'godlygeek/tabular'
-on_source = ['vim-markdown']
-# }}}
-
 [[plugins]]
 repo     = 'osyo-manga/vim-anzu'
 on_map   = ['<Plug>(anzu-']
@@ -131,12 +124,6 @@ lazy             = 1
 on_func          = ['GitGutterGetHunkSummary']
 hook_add         = 'call deinhook#vim_gitgutter#hookadd()'
 hook_post_source = 'call deinhook#vim_gitgutter#hookpostsource()'
-
-[[plugins]]
-repo     = 'plasticboy/vim-markdown'
-depends  = ['tabular']
-on_ft    = ['markdown']
-hook_add = 'call deinhook#vim_markdown#hookadd()'
 
 [[plugins]]
 repo             = 'Shougo/vimproc'

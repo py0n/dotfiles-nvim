@@ -27,11 +27,16 @@ return require('packer').startup(function(use)
 
     -- My plugins here
     use 'Shougo/context_filetype.vim'
+    use 'godlygeek/tabular'
     use {
         'notjedi/nvim-rooter.lua',
         config = function() require'nvim-rooter'.setup() end
     }
     use 'osyo-manga/vim-precious'
+    use {
+        'preservim/vim-markdown',
+        requires = {'godlygeek/tabular'}
+    }
     if vim.fn.has('win32unix') ~= 1 then
         use 'thinca/vim-localrc'
     end
