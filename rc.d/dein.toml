@@ -98,10 +98,6 @@ on_map   = ['<Plug>(anzu-']
 hook_add = 'call deinhook#vim_anzu#hookadd()'
 
 [[plugins]]
-repo     = 'altercation/vim-colors-solarized'
-hook_add = 'call deinhook#vim_colors_solarized#hookadd()'
-
-[[plugins]]
 repo        = 'easymotion/vim-easymotion'
 on_map      = ['/', '<Space>h', '<Space>j', '<Space>k', '<Space>l', '<Space>w', 's']
 hook_source = 'call deinhook#vim_easymotion#hookadd()'

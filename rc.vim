@@ -47,11 +47,8 @@ call s:source_rc('dein.vim')
 
 lua << EOF
 require("plugins")
+require("colorscheme")
 EOF
-
-" Colorscheme & Syntax highlight {{{
-call s:source_rc('colorscheme.vim')
-" }}}
 
 " Options {{{
 call s:source_rc('options.vim')
