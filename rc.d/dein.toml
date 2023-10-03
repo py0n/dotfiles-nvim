@@ -59,10 +59,6 @@ repo = 'Shougo/dein.vim'
 # }}}
 
 [[plugins]]
-repo     = 'itchyny/lightline.vim'
-hook_add = 'call deinhook#lightline#hookadd()'
-
-[[plugins]]
 repo     = 'osyo-manga/vim-anzu'
 on_map   = ['<Plug>(anzu-']
 hook_add = 'call deinhook#vim_anzu#hookadd()'
