@@ -36,6 +36,10 @@ return require('packer').startup(function(use)
     use 'godlygeek/tabular'
     use 'junegunn/vim-easy-align'
     use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use {
         'notjedi/nvim-rooter.lua',
         config = function() require'nvim-rooter'.setup() end
     }
