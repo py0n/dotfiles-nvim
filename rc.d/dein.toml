@@ -77,13 +77,6 @@ pre_func    = ['gista#']
 hook_source = 'call deinhook#vim_gista#hookadd()'
 
 [[plugins]]
-repo             = 'airblade/vim-gitgutter'
-lazy             = 1
-on_func          = ['GitGutterGetHunkSummary']
-hook_add         = 'call deinhook#vim_gitgutter#hookadd()'
-hook_post_source = 'call deinhook#vim_gitgutter#hookpostsource()'
-
-[[plugins]]
 repo             = 'Shougo/vimproc'
 host_post_update = 'call deinhook#vimproc#hookpostupdate()'
 
