@@ -66,6 +66,10 @@ call s:source_rc('mark.vim')
 call s:source_rc('keymaps.vim')
 " }}}
 
+lua << EOF
+require("keymaps")
+EOF
+
 " 編集・再読込 {{{
 command! Ev edit   $MYVIMRC
 command! Rv source $MYVIMRC
