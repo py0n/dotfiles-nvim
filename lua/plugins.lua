@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
         'notjedi/nvim-rooter.lua',
         config = function() require'nvim-rooter'.setup() end
     }
+    use 'osyo-manga/vim-anzu'
     use 'osyo-manga/vim-precious'
     use {
         'preservim/vim-markdown',

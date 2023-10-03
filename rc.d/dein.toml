@@ -58,11 +58,6 @@ hook_add = 'call deinhook#ddu#hookadd()'
 repo = 'Shougo/dein.vim'
 # }}}
 
-[[plugins]]
-repo     = 'osyo-manga/vim-anzu'
-on_map   = ['<Plug>(anzu-']
-hook_add = 'call deinhook#vim_anzu#hookadd()'
-
 # vim-fugitive {{{
 # https://github.com/lambdalisue/vim-gista
 [[plugins]]
