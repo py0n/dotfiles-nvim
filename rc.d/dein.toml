@@ -137,11 +137,6 @@ hook_add         = 'call deinhook#vim_gitgutter#hookadd()'
 hook_post_source = 'call deinhook#vim_gitgutter#hookpostsource()'
 
 [[plugins]]
-repo     = 'thinca/vim-localrc'
-if       = '!has("win32unix")'
-hook_add = 'call deinhook#vim_localrc#hookadd()'
-
-[[plugins]]
 repo     = 'plasticboy/vim-markdown'
 depends  = ['tabular']
 on_ft    = ['markdown']

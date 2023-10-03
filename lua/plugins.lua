@@ -32,6 +32,9 @@ return require('packer').startup(function(use)
         config = function() require'nvim-rooter'.setup() end
     }
     use 'osyo-manga/vim-precious'
+    if vim.fn.has('win32unix') ~= 1 then
+        use 'thinca/vim-localrc'
+    end
     use 'tpope/vim-surround'
 
     -- Automatically set up your configuration after cloning packer.nvim
