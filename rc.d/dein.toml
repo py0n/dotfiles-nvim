@@ -16,10 +16,6 @@ repo   = 'cohama/agit.vim'
 on_cmd = ['Agit', 'AgitFile']
 # }}}
 
-[[plugins]]
-repo     = 'Shougo/context_filetype.vim'
-hook_add = 'call deinhook#context_filetype#hookadd()'
-
 # ddu.vim {{{
 # https://github.com/Shougo/ddu.vim
 [[plugins]]
@@ -150,12 +146,6 @@ repo     = 'plasticboy/vim-markdown'
 depends  = ['tabular']
 on_ft    = ['markdown']
 hook_add = 'call deinhook#vim_markdown#hookadd()'
-
-[[plugins]]
-repo     = 'osyo-manga/vim-precious'
-depends  = ['context_filetype.vim']
-on_ft    = ['html', 'toml']
-hook_add = 'call deinhook#vim_precious#hookadd()'
 
 # vim-surround {{{
 [[plugins]]
