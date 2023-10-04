@@ -50,13 +50,7 @@ require("plugins")
 require("colorscheme")
 require("options")
 require("autocmds")
-EOF
-
-" Mark {{{
-call s:source_rc('mark.vim')
-" }}}
-
-lua << EOF
+require("mark")
 require("keymaps")
 EOF
 
