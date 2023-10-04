@@ -12,38 +12,8 @@ if !executable('deno')
     finish
 endif
 
-" Environments {{{
-let $MYVIMRUNTIME = fnamemodify($MYVIMRC, ':p:h')
-let $MYVIMRCDIR   = $MYVIMRUNTIME . '/rc.d'
-
-let $MYDEINCACHEDIR = exists('$XDG_CACHE_HOME') ?
- \  $XDG_CACHE_HOME . '/dein' :
- \  expand('~/.cache/dein')
-" }}}
-
-" Deirectories {{{
-if !isdirectory($MYDEINCACHEDIR)
-    call mkdir($MYDEINCACHEDIR, 'p')
-endif
-" }}}
-
-" Functions {{{
-function! s:source_rc(path, ...) abort "{{{
-    let abspath = expand($MYVIMRCDIR . '/' . a:path)
-    execute 'source' fnameescape(resolve(abspath))
-endfunction " }}}
-" }}}
-" }}}
-
 lua << EOF
 require("encoding")
-EOF
-
-" Plugins {{{
-call s:source_rc('dein.vim')
-" }}}
-
-lua << EOF
 require("plugins")
 require("colorscheme")
 require("options")
