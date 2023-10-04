@@ -2,7 +2,10 @@
 let s:cpo_save = &cpo
 set cpo&vim
 
-autocmd MyAugroup BufRead,BufNewFile *.toml setlocal filetype=toml
+augroup FtdetectToml
+    autocmd!
+    autocmd BufRead,BufNewFile *.toml setlocal filetype=toml
+augroup END
 
 let &cpo = s:cpo_save
 unlet s:cpo_save

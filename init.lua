@@ -3,10 +3,6 @@ if &compatible
     set nocompatible
 endif
 
-augroup MyAugroup
-    autocmd!
-augroup END
-
 if !executable('deno')
     echomsg "Please install deno!"
     finish
