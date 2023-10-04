@@ -1,51 +1,41 @@
 -- ddu.vimの設定
 -- https://zenn.dev/shougo/articles/ddu-vim-beta
-vim.cmd([[
-call ddu#custom#patch_global({
-\   'sources': [
-\       {'name': 'file_rec', 'params': {}},
-\       {'name': 'line'},
-\       {'name': 'mr'},
-\       {'name': 'register'},
-\   ],
-\ })
-
-call ddu#custom#patch_global({
-\   'sourceOptions': {
-\       '_': {
-\           'matchers': ['matcher_substring'],
-\       },
-\   },
-\ })
-
-call ddu#custom#patch_global({
-\   'sourceParams': {
-\       'rg': {
-\           'args': ['--column', '--no-heading', '--color', 'never'],
-\       },
-\   },
-\ })
-
-call ddu#custom#patch_global({
-\   'kindOptions': {
-\       'file': {
-\           'defaultAction': 'open',
-\       },
-\       'word': {
-\           'defaultAction': 'append',
-\       },
-\   },
-\ })
-
-call ddu#custom#patch_global({
-\   'ui': 'ff',
-\   'uiParams': {
-\       'ff': {
-\           'split': 'horizontal',
-\       },
-\   },
-\ })
-]])
+vim.fn['ddu#custom#patch_global']({
+    sources = {
+        {name = 'file_rec', params = {}},
+        {name = 'line'},
+        {name = 'mr'},
+        {name = 'register'},
+    },
+})
+vim.fn['ddu#custom#patch_global']{
+    sourceOptions = {
+        _ = {
+            matchers= {'matcher_substring'},
+        },
+    },
+}
+vim.fn['ddu#custom#patch_global']({
+    sourceParams = {
+        rg = {
+            args = {'--column', '--no-heading', '--color', 'never'},
+        },
+    },
+})
+vim.fn['ddu#custom#patch_global']({
+    kindOptions = {
+        file = {defaultAction = 'open'},
+        word = {defaultAction = 'append'},
+    },
+})
+vim.fn['ddu#custom#patch_global']({
+    ui       = 'ff',
+    uiParams = {
+        ff = {
+            split = 'horizontal',
+        },
+    },
+})
 
 vim.api.nvim_create_augroup('plugin/ddu', {clear = true})
 vim.api.nvim_create_autocmd('FileType', {
