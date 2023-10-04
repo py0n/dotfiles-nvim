@@ -1,5 +1,5 @@
-" https://github.com/Shougo/context_filetype.vim
-function deinhook#context_filetype#hookadd()
+-- https://github.com/Shougo/context_filetype.vim
+vim.cmd([[
     if !exists('g:context_filetype#filetypes')
         let g:context_filetype#filetypes = {}
     endif
@@ -17,4 +17,11 @@ function deinhook#context_filetype#hookadd()
      \      'end'      : '\2',
      \  },
      \  ]
-endfunction
+    let g:context_filetype#filetypes['lua'] = [
+     \  {
+     \      'filetype' : 'vim',
+     \      'start'    : '\[\[',
+     \      'end'      : '\]\]',
+     \  },
+     \  ]
+]])
