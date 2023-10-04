@@ -62,10 +62,6 @@ call s:source_rc('autocmds.vim')
 call s:source_rc('mark.vim')
 " }}}
 
-" Keymaps {{{
-call s:source_rc('keymaps.vim')
-" }}}
-
 lua << EOF
 require("keymaps")
 EOF
