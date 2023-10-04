@@ -45,18 +45,6 @@ call ddu#custom#patch_global({
 \       },
 \   },
 \ })
-
-nnoremap [denite] <Nop>
-nmap     <Space>u [denite]
-
-" ファイル検索(rg)
-nnoremap <silent> [denite]g :<C-u>DduRg<CR>
-" ファイル内検索
-nnoremap <silent> [denite]o <Cmd>call ddu#start({'sources': [{'name':'line'}]})<CR>
-" レジスタ(マーク)検索
-nnoremap <silent> [denite]m <Cmd>call ddu#start({'sources': [{'name':'register'}]})<CR>
-" 最近使用したファイル
-nnoremap <silent> [denite]p <Cmd>call ddu#start({'sources': [{'name':'mr'}]})<CR>
 ]])
 
 vim.api.nvim_create_augroup('plugin/ddu', {clear = true})
@@ -78,4 +66,25 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.api.nvim_buf_set_keymap(0, 'n', '<CR>', '<Cmd>close<CR>', {noremap = true, silent = true})
         vim.api.nvim_buf_set_keymap(0, 'n', 'q', '<Cmd>close<CR>', {noremap = true, silent = true})
     end
+})
+
+vim.api.nvim_set_keymap('n', '[denite]', '', {noremap = true})
+vim.api.nvim_set_keymap('n', ' u', '[denite]', {})
+
+-- ファイル検索(rg)
+vim.api.nvim_set_keymap('n', '[denite]g', ':<C-u>DduRg<CR>', {silent = true})
+-- ファイル内検索
+vim.api.nvim_set_keymap('n', '[denite]o', '<Cmd>call ddu#start({"sources": [{"name":"line"}]})<CR>', {
+    noremap = true,
+    silent  = true,
+})
+-- レジスタ(マーク)検索
+vim.api.nvim_set_keymap('n', '[denite]m', '<Cmd>call ddu#start({"sources": [{"name":"register"}]})<CR>', {
+    noremap = true,
+    silent  = true,
+})
+-- 最近使用したファイル
+vim.api.nvim_set_keymap('n', '[denite]p', '<Cmd>call ddu#start({"sources": [{"name":"mr"}]})<CR>', {
+    noremap = true,
+    silent  = true,
 })
