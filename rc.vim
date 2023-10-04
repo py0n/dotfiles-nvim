@@ -35,11 +35,9 @@ endfunction " }}}
 " }}}
 " }}}
 
-" Encoding {{{
-call s:source_rc('encoding.vim')
-" }}}
-
-" これより前に日本語のコメント禁止
+lua << EOF
+require("encoding")
+EOF
 
 " Plugins {{{
 call s:source_rc('dein.vim')
