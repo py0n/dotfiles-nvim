@@ -48,13 +48,7 @@ call s:source_rc('dein.vim')
 lua << EOF
 require("plugins")
 require("colorscheme")
-EOF
-
-" Options {{{
-call s:source_rc('options.vim')
-" }}}
-
-lua << EOF
+require("options")
 require("autocmds")
 EOF
 
