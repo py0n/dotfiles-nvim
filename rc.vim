@@ -54,9 +54,9 @@ EOF
 call s:source_rc('options.vim')
 " }}}
 
-" Autocmds {{{
-call s:source_rc('autocmds.vim')
-" }}}
+lua << EOF
+require("autocmds")
+EOF
 
 " Mark {{{
 call s:source_rc('mark.vim')
