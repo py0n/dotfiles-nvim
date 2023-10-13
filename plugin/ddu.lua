@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd('FileType', {
     callback = function()
         vim.api.nvim_buf_set_keymap(0, 'n', '<CR>', '<Cmd>call ddu#ui#ff#do_action("itemAction")<CR>', {noremap = true, silent = true})
         vim.api.nvim_buf_set_keymap(0, 'n', ' ', '<Cmd>call ddu#ui#ff#do_action("toggleSelectItem")<CR>', {noremap = true, silent = true})
-        vim.api.nvim_buf_set_keymap(0, 'n', 'i', '<Cmd>call ddu#ui#ff#do_action("openFilterAction")<CR>', {noremap = true, silent= true})
+        vim.api.nvim_buf_set_keymap(0, 'n', 'i', '<Cmd>call ddu#ui#ff#do_action("openFilterWindow")<CR>', {noremap = true, silent= true})
         vim.api.nvim_buf_set_keymap(0, 'n', 'q', '<Cmd>call ddu#ui#ff#do_action("quit")<CR>', {noremap = true, silent = true})
     end
 })
