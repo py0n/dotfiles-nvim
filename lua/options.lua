@@ -1,6 +1,6 @@
 -- See `:help option-summary`
 vim.opt.autoindent             = true
-vim.opt.backspace              = indent,eol,start -- :help 'backspace'
+vim.opt.backspace              = 'indent,eol,start' -- :help 'backspace'
 vim.opt.belloff                = all   -- 全てのベルを停止
 vim.opt.breakindent            = true
 vim.opt.cindent                = true
