@@ -2,15 +2,13 @@
 let s:cpo_save = &cpo
 set cpo&vim
 
-augroup FtdetectPerl
-    autocmd!
-    autocmd BufRead,BufNewFile *.pl   setlocal filetype=perl
-    autocmd BufRead,BufNewFile *.pm   setlocal filetype=perl
-    autocmd BufRead,BufNewFile *.psgi setlocal filetype=perl
-    autocmd BufRead,BufNewFile *.t    setlocal filetype=perl
-    autocmd BufRead,BufNewFile *.cgi  setlocal filetype=perl
-    autocmd BufRead,BufNewFile *.tdy  setlocal filetype=perl
-augroup END
+" https://vim-jp.org/vimdoc-ja/filetype.html#ftdetect
+autocmd BufRead,BufNewFile *.pl   setlocal filetype=perl
+autocmd BufRead,BufNewFile *.pm   setlocal filetype=perl
+autocmd BufRead,BufNewFile *.psgi setlocal filetype=perl
+autocmd BufRead,BufNewFile *.t    setlocal filetype=perl
+autocmd BufRead,BufNewFile *.cgi  setlocal filetype=perl
+autocmd BufRead,BufNewFile *.tdy  setlocal filetype=perl
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
