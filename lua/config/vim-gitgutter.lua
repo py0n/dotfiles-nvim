@@ -4,9 +4,9 @@ vim.g.gitgutter_sign_modified = '➜'
 vim.g.gitgutter_sign_removed  = '✘'
 
 vim.api.nvim_create_augroup('plugin/vim-gitgutter', {clear = true})
-vim.api.nvim_create_autocmd('VimEnter', {
+vim.api.nvim_create_autocmd('BufWritePost', {
     group   = 'plugin/vim-gitgutter',
-    command = 'GitGutterEnable',
+    command = 'GitGutter',
 })
 
 -- デフォルトでは以下のキーマップが設定されている。

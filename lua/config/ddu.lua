@@ -32,7 +32,8 @@ vim.fn['ddu#custom#patch_global']({
     ui       = 'ff',
     uiParams = {
         ff = {
-            split = 'horizontal',
+            split       = 'horizontal',
+            startFilter = true,
         },
     },
 })

@@ -1,0 +1,7 @@
+{
+    "diagnostics": {
+        // Neovim Lua LS で「undefined global vim」警告が出ないようにしたい
+        // https://qiita.com/mnishiguchi/items/03863db76e1ed1431c50
+        "globals": ["vim"]
+    }
+}

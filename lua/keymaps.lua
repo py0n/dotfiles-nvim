@@ -7,7 +7,6 @@ vim.api.nvim_set_keymap('n', 'Q',  '', {noremap = true})
 -- `<Esc>` を `jk` で代用する。
 -- http://deris.hatenablog.jp/entry/2014/05/20/235807
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', {noremap = true})
-vim.api.nvim_set_keymap('n', 'jk', '<Esc>', {noremap = true})
 
 -- コマンドラインモードでの履歴移動改善。
 -- http://lingr.com/room/vim/archives/2014/12/13#message-20830819
