@@ -5,12 +5,14 @@ vim.api.nvim_create_augroup('lua/cursorline', {
 -- ノーマルモードで行を目立たせる
 vim.api.nvim_set_hl(0, 'Comment', {ctermfg = 7})
 vim.api.nvim_set_hl(0, 'CursorColumn', {
+    bg      = 'DarkSlateGray',
     ctermbg = 240,
     ctermfg = 119,
     cterm   = BOLD,
     term    = reverse,
 })
 vim.api.nvim_set_hl(0, 'CursorLine', {
+    bg      = 'DarkSlateGray',
     ctermbg = 240,
     ctermfg = 119,
     cterm   = BOLD,
