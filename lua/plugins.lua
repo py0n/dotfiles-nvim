@@ -106,7 +106,7 @@ return {
         },
         config = function()
             require('config-local').setup({
-                config_files        = {'.local.vim'},
+                config_files        = {'.local.vim', '.local.lua'},
                 hashfile            = vim.fn.stdpath("data") .. "/config-local",
                 autocommands_create = true,
                 commands_create     = true,
@@ -132,7 +132,7 @@ return {
                 fallback_to_parent = false,
             })
         end,
-        event = 'BufEnter',
+        lazy = false,
     },
     -- nvim-treesister
     {
