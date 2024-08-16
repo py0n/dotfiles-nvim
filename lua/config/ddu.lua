@@ -32,7 +32,8 @@ vim.fn['ddu#custom#patch_global']({
     ui       = 'ff',
     uiParams = {
         ff = {
-            split = 'horizontal',
+            split       = 'horizontal',
+            startFilter = true,
         },
     },
 })
@@ -42,10 +43,10 @@ vim.api.nvim_create_autocmd('FileType', {
     group    = 'plugin/ddu',
     pattern  = 'ddu-ff',
     callback = function()
-        vim.api.nvim_buf_set_keymap(0, 'n', '<CR>', '<Cmd>call ddu#ui#ff#do_action("itemAction")<CR>', {noremap = true, silent = true})
-        vim.api.nvim_buf_set_keymap(0, 'n', ' ', '<Cmd>call ddu#ui#ff#do_action("toggleSelectItem")<CR>', {noremap = true, silent = true})
-        vim.api.nvim_buf_set_keymap(0, 'n', 'i', '<Cmd>call ddu#ui#ff#do_action("openFilterWindow")<CR>', {noremap = true, silent= true})
-        vim.api.nvim_buf_set_keymap(0, 'n', 'q', '<Cmd>call ddu#ui#ff#do_action("quit")<CR>', {noremap = true, silent = true})
+        vim.api.nvim_buf_set_keymap(0, 'n', '<CR>', '<Cmd>call ddu#ui#do_action("itemAction")<CR>', {noremap = true, silent = true})
+        vim.api.nvim_buf_set_keymap(0, 'n', ' ',    '<Cmd>call ddu#ui#do_action("toggleSelectItem")<CR>', {noremap = true, silent = true})
+        vim.api.nvim_buf_set_keymap(0, 'n', 'i',    '<Cmd>call ddu#ui#do_action("openFilterWindow")<CR>', {noremap = true, silent= true})
+        vim.api.nvim_buf_set_keymap(0, 'n', 'q',    '<Cmd>call ddu#ui#do_action("quit")<CR>', {noremap = true, silent = true})
     end
 })
 vim.api.nvim_create_autocmd('FileType', {

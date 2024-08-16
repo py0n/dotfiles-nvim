@@ -1,13 +1,13 @@
 -- See `:help option-summary`
 vim.opt.autoindent             = true
-vim.opt.backspace              = indent,eol,start -- :help 'backspace'
+vim.opt.backspace              = 'indent,eol,start' -- :help 'backspace'
 vim.opt.belloff                = all   -- 全てのベルを停止
 vim.opt.breakindent            = true
 vim.opt.cindent                = true
 vim.opt.cmdheight              = 1
 vim.opt.confirm                = true
-vim.opt.cursorcolumn           = true
-vim.opt.cursorline             = true
+vim.opt.cursorcolumn           = false
+vim.opt.cursorline             = false
 vim.opt.errorbells             = false
 vim.opt.expandtab              = true  -- タブを空白に展開
 vim.opt.hidden                 = true
@@ -30,7 +30,7 @@ vim.opt.smartcase              = true  -- 大文字を含むときはcase sentit
 vim.opt.smartindent            = true
 vim.opt.softtabstop            = 4
 vim.opt.tabstop                = 4                  -- タブ幅4
-vim.opt.title                  = tru
+vim.opt.title                  = true
 vim.opt.visualbell             = false
 vim.opt.wildmenu               = true
 vim.opt.wrapscan               = true

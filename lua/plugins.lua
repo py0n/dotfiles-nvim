@@ -1,109 +1,249 @@
--- https://github.com/wbthomason/packer.nvim#bootstrapping
---
--- Bootstrapping
--- If you want to automatically install and set up packer.nvim on any machine you clone your configuration to,
--- add the following snippet (which is due to @Iron-E and @khuedoan) somewhere in your config before your first usage of packer:
-local ensure_packer = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-        vim.cmd [[packadd packer.nvim]]
-        return true
-    end
-    return false
-end
-
-local packer_bootstrap = ensure_packer()
-
--- You can also use the following command (with packer bootstrapped) to have packer setup your configuration (or simply run updates)
--- and close once all operations are completed:
---
--- $ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
--- Plugins
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-
-    -- My plugins here
-
-    -- Linediff使用法
-    -- 1. 比較したい行をvisual modeで選択して `Linediff` を実行
-    -- 2. 比較対象の行をvisual modeで選択した上で再度 `Linediff` を実行
-    use 'AndrewRadev/linediff.vim'
-
-    use 'Shougo/context_filetype.vim'
-    use {
-        'Shougo/ddu-filter-matcher_substring',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use {
-        'Shougo/ddu-kind-file',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use {
-        'Shougo/ddu-kind-word',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use {
-        'Shougo/ddu-source-file_rec',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use {
-        'Shougo/ddu-source-line',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use {
-        'Shougo/ddu-source-register',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use {
-        'Shougo/ddu-ui-ff',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use 'Shougo/ddu.vim'
-    use 'airblade/vim-gitgutter'
-    use 'altercation/vim-colors-solarized'
-    use 'godlygeek/tabular'
-    use 'junegunn/vim-easy-align'
-    use {
-        'kuuote/ddu-source-mr',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use {
-        'lambdalisue/mr.vim',
-        requires = {'Shougo/ddu.vim'}
-    }
-    use {
+return {
+    -- context_filetype.vim
+    {
+        'Shougo/context_filetype.vim',
+        config = function()
+            require('config/context_filetype')
+        end,
+    },
+    --[[ copilot
+    {
+        'github/copilot.vim',
+        lazy=false,
+    },
+    ]]
+    -- ddu.vim
+    {
+        'Shougo/ddu.vim',
+        config = function()
+            require("config/ddu")
+        end,
+        dependencies = {
+            'Shougo/ddu-filter-matcher_substring',
+            'Shougo/ddu-kind-file',
+            'Shougo/ddu-kind-word',
+            'Shougo/ddu-source-file_rec',
+            'Shougo/ddu-source-line',
+            'Shougo/ddu-source-register',
+            'Shougo/ddu-ui-ff',
+            'kuuote/ddu-source-mr',
+            'lambdalisue/mr.vim',
+            'shun/ddu-source-rg',
+            'vim-denops/denops.vim',
+        },
+        event = 'BufEnter',
+    },
+    -- denops-helloworld.vim
+    {
+        'vim-denops/denops-helloworld.vim',
+        cmd = {
+            'DenopsHello',
+        },
+        dependencies = {
+            'vim-denops/denops.vim',
+        },
+    },
+    -- gruvbox.nvim
+    {
+        'ellisonleao/gruvbox.nvim',
+        keys = {
+            'colorscheme',
+        },
+    },
+    -- linediff.vim
+    {
+        -- Linediff使用法
+        -- 1. 比較したい行をvisual modeで選択して `Linediff` を実行
+        -- 2. 比較対象の行をvisual modeで選択した上で再度 `Linediff` を実行
+        'AndrewRadev/linediff.vim',
+        cmd = {
+            'Linediff',
+        },
+    },
+    -- lualine.nvim
+    {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-    use {
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            opt = true,
+        },
+        config = function()
+            require('config/lualine')
+        end,
+        event = 'VimEnter',
+    },
+    -- mason-lspconfig
+    {
+        'williamboman/mason-lspconfig.nvim',
+        config = function()
+            require('mason').setup()
+            require('mason-lspconfig').setup({
+                ensure_installed = {
+                    'lua_ls',
+                    'perlnavigator',
+                },
+            })
+            require('config/lua_ls')
+            require('config/perlnavigator')
+        end,
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            'williamboman/mason.nvim',
+        },
+        ft = {
+            'lua',
+            'perl',
+        },
+    },
+    -- nvim-config-local
+    {
+        'klen/nvim-config-local',
+        cmd = {
+            'ConfigLocalSource',
+            'ConfigLocalEdit',
+            'ConfigLocalTrust',
+            'ConfigLocalIgnore',
+        },
+        config = function()
+            require('config-local').setup({
+                config_files        = {'.local.vim', '.local.lua'},
+                hashfile            = vim.fn.stdpath("data") .. "/config-local",
+                autocommands_create = true,
+                commands_create     = true,
+                silent              = false,
+                lookup_parents      = true,
+            })
+        end,
+        lazy = false,
+    },
+    -- nvim-notify
+    {
+        'rcarriga/nvim-notify',
+        lazy = false,
+    },
+    -- nvim-rooter.lua
+    {
         'notjedi/nvim-rooter.lua',
-        config = function() require'nvim-rooter'.setup() end
-    }
-    use 'osyo-manga/vim-anzu'
-    use 'osyo-manga/vim-precious'
-    use {
+        config = function()
+            require('nvim-rooter').setup({
+                rooter_patterns    = {'.git', '.hg', '.svn'},
+                trigger_patterns   = {'*'},
+                manual             = false,
+                fallback_to_parent = false,
+            })
+        end,
+        lazy = false,
+    },
+    -- nvim-treesister
+    {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+    },
+    -- vim-anzu
+    {
+        'osyo-manga/vim-anzu',
+        config = function()
+            require('config/vim-anzu')
+        end,
+        keys = {'/', '?'},
+    },
+    -- vim-colors-solarized
+    {
+        'altercation/vim-colors-solarized',
+        keys = {
+            'colorsheme',
+        },
+    },
+    -- vim-easy-align
+    {
+        'junegunn/vim-easy-align',
+        keys = {
+            'V'
+        },
+    },
+    -- vim-easymotion
+    {
+        'easymotion/vim-easymotion',
+        config = function()
+            require('config/vim-easymotion')
+        end,
+        keys = {
+            '/',
+            '<Space>h',
+            '<Space>j',
+            '<Space>k',
+            '<Space>l',
+            '<Space>w',
+            's',
+        },
+    },
+    -- vim-fugitive
+    {
+        'tpope/vim-fugitive',
+        cmd = {
+            'G',
+            'GBrowse',
+            'GDelete',
+            'GMove',
+            'Gdiffsplit',
+            'Ggrep',
+            'Git',
+            'Gread',
+            'Gvdiffsplit',
+            'Gwrite',
+        },
+    },
+    -- vim-gitgutter
+    {
+        'airblade/vim-gitgutter',
+        config = function()
+            require('config/vim-gitgutter')
+        end,
+        event = 'BufEnter',
+    },
+    -- vim-markdown
+    {
         'preservim/vim-markdown',
-        requires = {'godlygeek/tabular'}
-    }
-    use {
-        'shun/ddu-source-rg',
-        requires = {'Shougo/ddu.vim'}
-    }
-    if vim.fn.has('win32unix') ~= 1 then
-        use 'thinca/vim-localrc'
-    end
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-surround'
-    use 'vim-denops/denops-helloworld.vim'
-    use 'vim-denops/denops.vim'
-    use 'yuki-yano/fuzzy-motion.vim'
-
-    -- Automatically set up your configuration after cloning packer.nvim
-    -- Put this at the end after all plugins
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-end)
+        config = function()
+            require('config/vim_markdown')
+        end,
+        dependencies = {
+            'godlygeek/tabular',
+        },
+        ft = {
+            'markdown',
+        },
+    },
+    -- vim-precious
+    {
+        'osyo-manga/vim-precious',
+        config = function()
+            require('config/vim-precious')
+        end,
+        dependencies = {
+            'Shougo/context_filetype.vim',
+        },
+        event = {
+            'InsertEnter',
+            'InsertLeave',
+        },
+    },
+    -- vim-startuptime
+    {
+        "dstein64/vim-startuptime",
+        cmd = "StartupTime",
+        init = function()
+            vim.g.startuptime_tries = 10
+        end,
+    },
+    -- vim-surround
+    {
+        'tpope/vim-surround',
+        keys = {
+            'cs',
+            'ds',
+            'v',
+        },
+    },
+}
+-- vim:set fileencoding=utf-8 fileformat=unix foldmethod=marker:
