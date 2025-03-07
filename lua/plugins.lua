@@ -151,7 +151,7 @@ return {
     {
         'altercation/vim-colors-solarized',
         keys = {
-            'colorsheme',
+            'colorscheme',
         },
     },
     -- vim-easy-align
