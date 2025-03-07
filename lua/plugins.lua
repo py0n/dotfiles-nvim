@@ -6,12 +6,6 @@ return {
             require('config/context_filetype')
         end,
     },
-    --[[ copilot
-    {
-        'github/copilot.vim',
-        lazy=false,
-    },
-    ]]
     -- ddu.vim
     {
         'Shougo/ddu.vim',
