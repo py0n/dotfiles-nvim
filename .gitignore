@@ -1,6 +1,10 @@
 .init.vim-rplugin~
+AGENTS.md
 autoload/deoplete/
 doc/deoplete.txt
+node_modules/
+package-lock.json
+package.json
 plugin/deoplete.vim
 plugin/packer_compiled.lua
 rplugin/python3/deoplete.py
