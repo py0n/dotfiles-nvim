@@ -66,28 +66,57 @@ return {
         end,
         event = 'VimEnter',
     },
-    -- mason-lspconfig
+    -- mason-lspconfig (安全ラッパー付き)
     {
         'williamboman/mason-lspconfig.nvim',
+        dependencies = { 'williamboman/mason.nvim' }, -- mason を先に読み込ませる
         config = function()
-            require('mason').setup()
-            require('mason-lspconfig').setup({
-                ensure_installed = {
-                    'lua_ls',
-                    'perlnavigator',
-                },
-            })
-            require('config/lua_ls')
-            require('config/perlnavigator')
+            -- safe require for mason
+            local ok_m, mason = pcall(require, "mason")
+            if ok_m and type(mason.setup) == "function" then
+                pcall(mason.setup)
+            else
+                vim.notify("mason.nvim not available or broken; LSP installation management may not work", vim.log.levels.WARN)
+            end
+
+            local ok_ml, mlc = pcall(require, "mason-lspconfig")
+            if not ok_ml then
+                vim.notify("mason-lspconfig not available; skipping mason-lspconfig setup", vim.log.levels.WARN)
+                return
+            end
+
+            -- safe setup if available
+            if type(mlc.setup) == "function" then
+                pcall(mlc.setup, {
+                    ensure_installed = {
+                        -- 必要なサーバー名を列挙（既存のリストをここに入れてください）
+                        "lua_ls",
+                        "perlnavigator",
+                    },
+                })
+            end
+
+            -- setup_handlers があるかチェックして使う（無ければフォールバック）
+            if type(mlc.setup_handlers) == "function" then
+                mlc.setup_handlers({
+                    -- default handler: enable server via vim.lsp.enable
+                    function(server_name)
+                        vim.lsp.enable(server_name)
+                    end,
+                    -- 個別ハンドラを入れていたらここに追記してください
+                    -- ["lua_ls"] = function() ... end,
+                })
+            else
+                -- 古い/違うバージョンの mason-lspconfig なら明示的に enable する
+                vim.notify("mason-lspconfig.setup_handlers not present; enabling fallback servers", vim.log.levels.WARN)
+                local fallback = { "lua_ls", "perlnavigator" } -- 必要に応じて編集
+                for _, s in ipairs(fallback) do
+                    pcall(vim.lsp.enable, s)
+                end
+            end
         end,
-        dependencies = {
-            'neovim/nvim-lspconfig',
-            'williamboman/mason.nvim',
-        },
-        ft = {
-            'lua',
-            'perl',
-        },
+        -- ft を外すか、もしくは必要な場合は残す（ただし遅延ロードで順序問題が出るので注意）
+        ft = { 'lua', 'perl' },
     },
     -- nvim-config-local
     {
