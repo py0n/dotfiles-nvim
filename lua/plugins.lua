@@ -115,8 +115,7 @@ return {
                 end
             end
         end,
-        -- ft を外すか、もしくは必要な場合は残す（ただし遅延ロードで順序問題が出るので注意）
-        ft = { 'lua', 'perl' },
+        event = "VimEnter",
     },
     -- nvim-config-local
     {
